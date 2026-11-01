@@ -1,0 +1,2590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monash University Malaysia — BSc (Tropical Environmental Biology) Course &amp; Elective Advisor</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-emerald-600 selection:text-white">
+
+  <!-- Top Header -->
+  <header class="bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 text-white border-b border-emerald-800/60 shadow-lg sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+      <div class="flex items-start sm:items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300 font-extrabold text-lg shrink-0">
+          M
+        </div>
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+              Monash University Malaysia
+            </span>
+            <span class="text-xs font-medium text-slate-300">
+              July (Sem 2, 2026) Intake Cohort
+            </span>
+          </div>
+          <h1 class="text-base sm:text-lg font-bold tracking-tight text-white mt-0.5">
+            S2000 — Bachelor of Science: Tropical Environmental Biology Advisor
+          </h1>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex flex-wrap items-center gap-1.5" aria-label="Main Navigation">
+        <button id="tab-btn-advisor" data-tab="advisor" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-emerald-500 text-slate-950 shadow-sm">
+          1. Career &amp; Pathway Quiz
+        </button>
+        <button id="tab-btn-planner" data-tab="planner" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-slate-800/80 text-slate-200 hover:bg-slate-700">
+          2. 2026–2029 Course Map
+        </button>
+        <button id="tab-btn-explorer" data-tab="explorer" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-slate-800/80 text-slate-200 hover:bg-slate-700">
+          3. Unit Explorer (32 Units)
+        </button>
+        <button id="tab-btn-visa" data-tab="visa" class="nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-slate-800/80 text-slate-200 hover:bg-slate-700">
+          4. Visa, MPU &amp; Honours Rules
+        </button>
+      </nav>
+    </div>
+
+    <!-- Live Degree Compliance Bar -->
+    <div class="bg-slate-900/95 border-t border-slate-800 px-4 sm:px-6 py-2">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-xs">
+        <div class="bg-slate-800/90 rounded-lg px-2.5 py-1.5 border border-slate-700 flex items-center justify-between">
+          <span class="text-slate-400">Total Degree:</span>
+          <span id="stat-total-cp" class="font-bold text-emerald-400">144 / 144 CP</span>
+        </div>
+        <div id="stat-box-l1cap" class="bg-slate-800/90 rounded-lg px-2.5 py-1.5 border border-slate-700 flex items-center justify-between">
+          <span class="text-slate-400" title="Maximum 10 Level 1 units (60 CP) allowed across entire S2000 degree">Level 1 Cap (Max 10):</span>
+          <span id="stat-l1-cap" class="font-bold text-emerald-400">10 / 10 Units</span>
+        </div>
+        <div class="bg-slate-800/90 rounded-lg px-2.5 py-1.5 border border-slate-700 flex items-center justify-between">
+          <span class="text-slate-400" title="Minimum 6 Level 1 Science units (36 CP) required">L1 Science (Min 6):</span>
+          <span id="stat-l1-sci" class="font-bold text-emerald-400">6 / 6 Met</span>
+        </div>
+        <div id="stat-box-l23sci" class="bg-slate-800/90 rounded-lg px-2.5 py-1.5 border border-slate-700 flex items-center justify-between">
+          <span class="text-slate-400" title="Minimum 10 Level 2/3 Science units (60 CP) required">L2/3 Sci (Min 10):</span>
+          <span id="stat-l23-sci" class="font-bold text-emerald-400">10 / 10 Units</span>
+        </div>
+        <div class="bg-slate-800/90 rounded-lg px-2.5 py-1.5 border border-slate-700 flex items-center justify-between">
+          <span class="text-slate-400" title="Number of Final Exams vs 100% Coursework units in 2027">2027 Final Exams:</span>
+          <span id="stat-2027-exams" class="font-bold text-amber-300">4 / 8 Units</span>
+        </div>
+        <div class="bg-slate-800/90 rounded-lg px-2.5 py-1.5 border border-slate-700 flex items-center justify-between">
+          <span class="text-slate-400">Degree Track:</span>
+          <span id="stat-track-badge" class="font-bold text-sky-300 truncate ml-1">Major (48 CP)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+    <!-- Live Validation Banner (if any rule alerts or active pathway info) -->
+    <div id="validation-banner" class="rounded-xl border p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-50 border-emerald-200 text-emerald-900">
+      <div class="flex items-start gap-2.5">
+        <span id="validation-icon" class="text-lg leading-none mt-0.5">✅</span>
+        <div>
+          <p id="validation-title" class="text-sm font-bold">All S2000 — Bachelor of Science &amp; Student Visa Rules Satisfied</p>
+          <p id="validation-desc" class="text-xs text-emerald-800 mt-0.5">
+            Your 2027–2029 study plan meets the 36 CP Level 1 Science minimum, stays within the 10-unit (60 CP) Level 1 maximum cap, and satisfies all unit prerequisites and semester offerings.
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button id="btn-jump-planner" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-700 text-white hover:bg-emerald-800 transition">
+          View/Edit Course Map
+        </button>
+        <button id="btn-export-plan" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-800 border border-slate-300 hover:bg-slate-50 transition">
+          Copy WES Plan
+        </button>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- TAB 1: CAREER & PATHWAY DIAGNOSTIC QUIZ                           -->
+    <!-- ================================================================= -->
+    <section id="view-advisor" class="space-y-6">
+      <!-- Intro Hero Card -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+          <div>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+              Interactive Course &amp; Career Advisor
+            </span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-2">
+              Find Your Ideal 2027–2029 Elective &amp; Career Pathway
+            </h2>
+            <p class="text-sm text-slate-600 mt-1 max-w-3xl">
+              You are currently completing <strong>Semester 2, 2026</strong> (<strong>ENV1800</strong>, <strong>CHM1051</strong>, <strong>SCI1020</strong>, <strong>SCI1000</strong>). Answer the 5 advising questions below—or pick one of the 5 pre-built pathways—to automatically configure your <strong>Semester 1, 2027</strong>, <strong>Semester 2, 2027</strong>, and <strong>2028</strong> slots while obeying all Monash Handbook rules.
+            </p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-200 shrink-0 text-xs space-y-1.5 lg:w-72">
+            <div class="font-bold text-slate-800 flex items-center justify-between">
+              <span>Current Shortlist Quick Audit</span>
+              <span class="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-semibold">9 Units</span>
+            </div>
+            <p class="text-slate-600">• <strong>Sem 1, 2027 Eligible (3):</strong> <span class="font-medium text-slate-800">FST1800, AMU1314, AMU1325</span></p>
+            <p class="text-slate-600">• <strong>Sem 2, 2027 Only (5):</strong> <span class="font-medium text-slate-800">AMU1223, AMU1055, AMU1017, BPS1042, ANT1800</span></p>
+            <p class="text-rose-600 font-medium">• <strong>Blocked (1):</strong> NUT1024 (M2016 only → use FST1911)</p>
+          </div>
+        </div>
+
+        <!-- 5 Interactive Diagnostic Questions -->
+        <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-7 space-y-5">
+            <div class="flex items-center justify-between">
+              <h3 class="text-base font-bold text-slate-900">Step 1: Answer 5 Advisor Questions</h3>
+              <button id="btn-reset-quiz" type="button" class="text-xs font-medium text-slate-500 hover:text-slate-800 underline">
+                Reset Answers
+              </button>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="bg-slate-50/80 rounded-xl p-4 border border-slate-200/90 space-y-2.5">
+              <label class="block text-sm font-bold text-slate-900">
+                1. Workload &amp; Lab Appetite: How are you finding your current wet labs and exam load (CHM1051 &amp; ENV1800)?
+              </label>
+              <p class="text-xs text-slate-500">
+                In Semester 1, 2027, both compulsory cores (<strong>BIO1011 — Blueprints for life</strong> and <strong>CHM1052 — Chemistry 2 advanced</strong>) have 3-hour weekly labs and final exams.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+                <button type="button" data-q="q1" data-val="light" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm">
+                  <div class="font-bold">Keep Exams Light</div>
+                  <div class="opacity-90 mt-0.5">Pair my Science cores with 100%-coursework (no-exam) Arts units.</div>
+                </button>
+                <button type="button" data-q="q1" data-val="balanced" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">Balanced Mix</div>
+                  <div class="opacity-80 mt-0.5">1 applied Science unit + 1 exam-free Humanities unit per semester.</div>
+                </button>
+                <button type="button" data-q="q1" data-val="heavy_sci" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">Love Wet Labs</div>
+                  <div class="opacity-80 mt-0.5">I thrive in lab practicals and want maximum Science electives.</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="bg-slate-50/80 rounded-xl p-4 border border-slate-200/90 space-y-2.5">
+              <label class="block text-sm font-bold text-slate-900">
+                2. Assessment Strengths: Which assessment format gives you the highest GPA?
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+                <button type="button" data-q="q2" data-val="writing" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm">
+                  <div class="font-bold">Essays &amp; Creative Media</div>
+                  <div class="opacity-90 mt-0.5">Short stories, film analysis, policy essays &amp; portfolios (No final exam).</div>
+                </button>
+                <button type="button" data-q="q2" data-val="presentations" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">Presentations &amp; Campaigns</div>
+                  <div class="opacity-80 mt-0.5">Group pitches, PR campaigns &amp; active workshops (BPS1042, AMU2814).</div>
+                </button>
+                <button type="button" data-q="q2" data-val="labs_exams" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">Lab Reports &amp; Exams</div>
+                  <div class="opacity-80 mt-0.5">Structured scientific tests, practical exams &amp; quantitative reports.</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="bg-slate-50/80 rounded-xl p-4 border border-slate-200/90 space-y-2.5">
+              <label class="block text-sm font-bold text-slate-900">
+                3. Why Did You Shortlist Nutrition (NUT1024) &amp; Pharma (BPS1042)?
+              </label>
+              <p class="text-xs text-slate-500">
+                Since <strong>NUT1024 — Nutrition, health and behaviour</strong> is restricted to M2016 Human Nutrition students, tell us what drew you to those topics:
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+                <button type="button" data-q="q3" data-val="food_nut" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">Food &amp; Human Nutrition</div>
+                  <div class="opacity-80 mt-0.5">Use FST1800 &amp; FST1911 (Introduction to nutrition) in Sem 1 instead.</div>
+                </button>
+                <button type="button" data-q="q3" data-val="pharma_bio" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">Bioactive Drug Discovery</div>
+                  <div class="opacity-80 mt-0.5">Keep BPS1042 in Sem 2 &amp; explore biotechnology / medicinal chemistry.</div>
+                </button>
+                <button type="button" data-q="q3" data-val="just_browsing" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm">
+                  <div class="font-bold">Just Exploring Electives</div>
+                  <div class="opacity-90 mt-0.5">I prefer Environmental Biology, Conservation, or Humanities breadth.</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="bg-slate-50/80 rounded-xl p-4 border border-slate-200/90 space-y-2.5">
+              <label class="block text-sm font-bold text-slate-900">
+                4. Graduation &amp; Career Profile: How do you want your transcript to stand out in 2029?
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                <button type="button" data-q="q4" data-val="global_policy" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm">
+                  <div class="font-bold">Environmental Policy, NGOs &amp; Global Studies Minor</div>
+                  <div class="opacity-90 mt-0.5">Pair Tropical Biology with AMU1325 + AMU1055 + Level 2 Global Studies (MGLBLSTD08).</div>
+                </button>
+                <button type="button" data-q="q4" data-val="extended_major" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">72-CP Extended Major Specialist (TRENVBIO06)</div>
+                  <div class="opacity-80 mt-0.5">Add BTH2830 (Microbiology) + BTH3732 (Environmental microbiology) for deep expertise.</div>
+                </button>
+                <button type="button" data-q="q4" data-val="genetics_biotech" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">Conservation Genetics &amp; Molecular Biotech</div>
+                  <div class="opacity-80 mt-0.5">Take BIO1022 in Sem 2, 2027 to unlock GEN2041 (Genetics) &amp; GEN2052 (Genomics).</div>
+                </button>
+                <button type="button" data-q="q4" data-val="media_writing" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">Science Journalism, Film &amp; PR Campaigns</div>
+                  <div class="opacity-80 mt-0.5">Combine Writing (AMU1314 + AMU1333), Screen Studies (AMU1224 + AMU1223) &amp; PR (AMU2814).</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="bg-slate-50/80 rounded-xl p-4 border border-slate-200/90 space-y-2.5">
+              <label class="block text-sm font-bold text-slate-900">
+                5. Sem 2, 2027 Level 2 Science Slot: What style of Level 2 Science unit do you prefer alongside ENV2726?
+              </label>
+              <p class="text-xs text-slate-500">
+                Your Sem 2, 2027 map has a mandatory <strong>Science unit – Level 2 or 3</strong> slot (Level 1 units cannot go here).
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+                <button type="button" data-q="q5" data-val="STA2216" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm">
+                  <div class="font-bold">STA2216 — Data Analysis</div>
+                  <div class="opacity-90 mt-0.5">Unlocked by SCI1020; essential statistics for ecology &amp; Honours research.</div>
+                </button>
+                <button type="button" data-q="q5" data-val="SCI2716" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">SCI2716 — Lab Safety &amp; Risk</div>
+                  <div class="opacity-80 mt-0.5">Lightest schedule (2h tutorial/wk, no wet lab; unlocked by 24 CP L1 Science).</div>
+                </button>
+                <button type="button" data-q="q5" data-val="BTH2732" class="quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300">
+                  <div class="font-bold">BTH2732 / FST2810 Wet Lab</div>
+                  <div class="opacity-80 mt-0.5">Recombinant DNA technology (BTH2732) or Food bioprocess tech (FST2810).</div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Advisor Recommendation & 5 Preset Pathways -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-900 text-white rounded-2xl p-5 border border-emerald-700/50 shadow-md space-y-4 sticky top-28">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Personalized Advisor Match</span>
+                  <h3 id="rec-pathway-title" class="text-lg font-extrabold text-white mt-0.5">
+                    Pathway 1: Global Policy &amp; Balanced GPA Track
+                  </h3>
+                </div>
+                <span id="rec-match-badge" class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                  Best Fit
+                </span>
+              </div>
+
+              <p id="rec-pathway-summary" class="text-xs text-slate-300 leading-relaxed">
+                Uses your shortlisted exam-free Arts units (<strong>AMU1314</strong> &amp; <strong>AMU1325</strong> in Sem 1; <strong>AMU1055</strong> &amp; <strong>AMU1223</strong> in Sem 2) to keep your lab workload stress-free, pairs <strong>ENV2726</strong> with <strong>STA2216 — Data analysis for science</strong>, and unlocks a formal 24-CP minor in <strong>MGLBLSTD08 — Global studies</strong> in 2028.
+              </p>
+
+              <!-- Recommended 2027 & 2028 Unit Preview -->
+              <div class="space-y-2.5 bg-slate-950/60 rounded-xl p-3.5 border border-slate-800 text-xs">
+                <div>
+                  <span class="font-bold text-emerald-400">Semester 1, 2027 (2 Electives + 2 Cores):</span>
+                  <ul id="rec-list-s1-2027" class="mt-1 space-y-1 text-slate-200"></ul>
+                </div>
+                <div class="border-t border-slate-800/80 pt-2">
+                  <span class="font-bold text-sky-400">Semester 2, 2027 (1 L2 Science + 2 Electives + ENV2726):</span>
+                  <ul id="rec-list-s2-2027" class="mt-1 space-y-1 text-slate-200"></ul>
+                </div>
+                <div class="border-t border-slate-800/80 pt-2">
+                  <span class="font-bold text-amber-300">Semester 1, 2028 (L2/L3 Electives — Cap Safe):</span>
+                  <ul id="rec-list-s1-2028" class="mt-1 space-y-1 text-slate-200"></ul>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-2 pt-1">
+                <button id="btn-apply-recommended" type="button" class="flex-1 py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm transition shadow">
+                  Apply This Pathway to My Course Map →
+                </button>
+              </div>
+
+              <!-- Quick Preset Switcher -->
+              <div class="border-t border-slate-800 pt-3">
+                <div class="text-xs font-semibold text-slate-400 mb-2">Or compare all 5 curated advisor pathways:</div>
+                <div class="grid grid-cols-1 gap-1.5">
+                  <button type="button" data-preset="global_policy" class="preset-pathway-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-between">
+                    <span>1. Global Policy &amp; Balanced Arts Minor (MGLBLSTD08)</span>
+                    <span class="text-emerald-400 font-bold">Load</span>
+                  </button>
+                  <button type="button" data-preset="extended_major" class="preset-pathway-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-between">
+                    <span>2. 72-CP Extended Major Specialist (TRENVBIO06)</span>
+                    <span class="text-emerald-400 font-bold">Load</span>
+                  </button>
+                  <button type="button" data-preset="genetics_biotech" class="preset-pathway-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-between">
+                    <span>3. Conservation Genetics &amp; Molecular Biotech Track</span>
+                    <span class="text-emerald-400 font-bold">Load</span>
+                  </button>
+                  <button type="button" data-preset="food_pharma" class="preset-pathway-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-between">
+                    <span>4. Food Science, Nutrition &amp; Pharma Discovery Track</span>
+                    <span class="text-emerald-400 font-bold">Load</span>
+                  </button>
+                  <button type="button" data-preset="media_writing" class="preset-pathway-btn text-left px-3 py-2 rounded-lg text-xs font-medium bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-between">
+                    <span>5. Environmental Media, Writing &amp; PR Campaigns</span>
+                    <span class="text-emerald-400 font-bold">Load</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- TAB 2: INTERACTIVE 2026–2029 COURSE MAP BUILDER                   -->
+    <!-- ================================================================= -->
+    <section id="view-planner" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+              Interactive Progression Map (July 2026 Intake)
+            </span>
+            <h2 class="text-xl font-bold text-slate-900 mt-1.5">
+              2026–2029 Course Map &amp; WES Enrolment Simulator
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+              Click any <strong>Customizable Slot</strong> below to swap units. The planner automatically enforces <strong>Semester 1 vs. Semester 2 availability</strong> at Monash Malaysia, checks <strong>prerequisites</strong>, and guards the <strong>10-unit Level 1 maximum cap</strong>.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <select id="planner-preset-select" aria-label="Load Preset Study Plan" class="text-xs font-semibold rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-slate-800">
+              <option value="global_policy">Preset: 1. Global Policy &amp; Balanced GPA</option>
+              <option value="extended_major">Preset: 2. 72-CP Extended Major (TRENVBIO06)</option>
+              <option value="genetics_biotech">Preset: 3. Conservation Genetics &amp; Biotech</option>
+              <option value="food_pharma">Preset: 4. Food Science, Nutrition &amp; Pharma</option>
+              <option value="media_writing">Preset: 5. Media, Writing &amp; PR Campaigns</option>
+            </select>
+            <button id="btn-planner-copy" type="button" class="px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-900 text-white hover:bg-slate-800 transition">
+              Export Plan Summary
+            </button>
+          </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="flex flex-wrap items-center gap-3 text-xs text-slate-600 pt-4 pb-2">
+          <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-600 inline-block"></span> Compulsory Major Core (TRENVBIO05)</span>
+          <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-teal-100 border border-teal-400 inline-block"></span> Part A Science Specified / Sequence</span>
+          <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-sky-100 border border-sky-400 inline-block"></span> Customizable Science Slot (Level 2/3)</span>
+          <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-amber-100 border border-amber-400 inline-block"></span> Customizable Free Elective Slot</span>
+        </div>
+
+        <!-- Course Map Grid rendered by JS -->
+        <div id="course-map-container" class="space-y-4 mt-3"></div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- TAB 3: COMPLETE UNIT EXPLORER & SHORTLIST AUDITOR (32 UNITS)      -->
+    <!-- ================================================================= -->
+    <section id="view-explorer" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 space-y-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+              Verified Monash Malaysia Catalog (No Psychology)
+            </span>
+            <h2 class="text-xl font-bold text-slate-900 mt-1.5">
+              Shortlist Auditor &amp; Expanded Biology / Humanities Unit Explorer
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+              Compare your <strong>9 original shortlisted units</strong> alongside <strong>23 high-synergy Biology, Biotech, Food Science, and Humanities (AMU) units</strong> offered at Monash University Malaysia, with direct links to the official Monash Handbook.
+            </p>
+          </div>
+          <div class="w-full md:w-64">
+            <input id="unit-search-input" type="text" placeholder="Search code, title, or topic..." class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 text-xs">
+          <div>
+            <label for="filter-source" class="block font-semibold text-slate-600 mb-1">Shortlist Status</label>
+            <select id="filter-source" class="w-full rounded-lg border border-slate-300 bg-slate-50 px-2.5 py-2 text-slate-800 font-medium">
+              <option value="ALL">All 32 Verified Units</option>
+              <option value="SHORTLIST">Original Shortlist (9 Units)</option>
+              <option value="EXPANDED">Recommended Additions (17 Units)</option>
+              <option value="CORE">Compulsory Major &amp; Yr 1 Cores (6)</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-sem" class="block font-semibold text-slate-600 mb-1">Malaysia Semester</label>
+            <select id="filter-sem" class="w-full rounded-lg border border-slate-300 bg-slate-50 px-2.5 py-2 text-slate-800 font-medium">
+              <option value="ALL">Any Teaching Period</option>
+              <option value="S1">Semester 1 (March–June)</option>
+              <option value="S2">Semester 2 (July–Nov)</option>
+              <option value="SUMMER">Summer Semester</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-disc" class="block font-semibold text-slate-600 mb-1">Discipline Area</label>
+            <select id="filter-disc" class="w-full rounded-lg border border-slate-300 bg-slate-50 px-2.5 py-2 text-slate-800 font-medium">
+              <option value="ALL">All Disciplines (No Psych)</option>
+              <option value="BIO">Biology, Ecology &amp; Biotech</option>
+              <option value="FOOD_PHARMA">Food, Nutrition &amp; Pharma</option>
+              <option value="DATA_CHEM">Chemistry, Stats &amp; Safety</option>
+              <option value="ARTS">Humanities, Media &amp; Writing (AMU)</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-level" class="block font-semibold text-slate-600 mb-1">Unit Level</label>
+            <select id="filter-level" class="w-full rounded-lg border border-slate-300 bg-slate-50 px-2.5 py-2 text-slate-800 font-medium">
+              <option value="ALL">All Levels (L1, L2, L3)</option>
+              <option value="1">Level 1 (1xxx — Cap 10 max)</option>
+              <option value="2">Level 2 (2xxx — Cap-Safe)</option>
+              <option value="3">Level 3 (3xxx — Capstone)</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-exam" class="block font-semibold text-slate-600 mb-1">Exam vs. Coursework</label>
+            <select id="filter-exam" class="w-full rounded-lg border border-slate-300 bg-slate-50 px-2.5 py-2 text-slate-800 font-medium">
+              <option value="ALL">All Assessment Styles</option>
+              <option value="NO_EXAM">100% Coursework (No Final Exam)</option>
+              <option value="HAS_EXAM">Includes Final Exam</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-slate-500 pt-1">
+          <span id="explorer-count-label">Showing 32 units</span>
+          <button id="btn-reset-filters" type="button" class="text-emerald-700 font-semibold hover:underline">
+            Reset All Filters
+          </button>
+        </div>
+
+        <!-- Cards Grid -->
+        <div id="unit-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- TAB 4: INTERNATIONAL STUDENT VISA, MPU & HONOURS CHECKLIST        -->
+    <!-- ================================================================= -->
+    <section id="view-visa" class="hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left: MPU Checklist -->
+        <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+            Compulsory Malaysian Ministry of Higher Education Requirement
+          </span>
+          <h2 class="text-xl font-bold text-slate-900">
+            General Studies (Course Code 9410) Checklist for International Students
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600">
+            All international students commencing at Monash University Malaysia from <strong>Semester 2, 2026 onwards</strong> must enrol in and pass these 6 General Studies (MPU) units under course code <strong>9410</strong> in WES before graduating (<a href="https://www.monash.edu.my/science/current/undergraduate/general-studies-school-of-science" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">School of Science General Studies Guide ↗</a>). They carry 0 credit points toward your 144 CP science degree and are best completed across Years 1 and 2.
+          </p>
+
+          <div id="mpu-checklist-container" class="space-y-2.5 pt-2"></div>
+        </div>
+
+        <!-- Right: Visa, WES Manual Enrolment & Honours Rules -->
+        <div class="lg:col-span-5 space-y-5">
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-3">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <span>🛂</span> International Student Pass (Visa) Rules
+            </h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li>
+                • <strong>Mandatory 4-Unit Standard Semester Load:</strong> International students on a Malaysian Student Pass must enrol in <strong>4 units (24 credit points)</strong> in every standard semester (Semester 1 and Semester 2) (<a href="https://www.monash.edu.my/science/commencing-new-students/bachelor-of-science" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline">Monash Malaysia BSc Progression Rules ↗</a>).
+              </li>
+              <li>
+                • <strong>Summer 2028 vs. Final Semester (Sem 1, 2029) Underload Alert:</strong> On your attached course map, taking <strong>SCI3800 — Science internship</strong> in <strong>Summer 2028</strong> leaves only <strong>3 units (18 credit points)</strong> in your final semester (<strong>Sem 1, 2029: BIO3800, BIO3810, SCI3990</strong>). Underloading in your final graduating semester is permitted only if you have just 18 CP remaining to finish your degree—confirm with the School of Science Course Management Office before enrolling in Summer 2028.
+              </li>
+              <li>
+                • <strong>Manual Enrolment Units:</strong> The School of Science requires manual enrolment via the online <em>Enrolment Amendment Form</em> for <strong>BIO3820 — Tropical terrestrial biology</strong>, <strong>SCI3800 — Science internship</strong>, and <strong>SCI3990 — Science in action research project</strong> (<a href="https://www.monash.edu.my/science/current/undergraduate/course-and-unit-information/unit-offering" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline">School of Science Unit Offerings ↗</a>).
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-3">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <span>🎓</span> Pathway to S3701 — Bachelor of Science (Honours)
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              To qualify for the one-year <a href="https://handbook.monash.edu/2026/courses/S3701" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">S3701 — Bachelor of Science (Honours) ↗</a> program in Tropical Environmental Biology:
+            </p>
+            <ul class="text-xs text-slate-600 space-y-1.5">
+              <li>• Achieve a <strong>Distinction grade average (70%+)</strong> in <strong>24 credit points (4 units) of relevant Level 3 Science units</strong> (including at least 18 credit points in your major discipline: <strong>BIO3800</strong>, <strong>BIO3810</strong>, <strong>BIO3820</strong>).</li>
+              <li>• Complete <strong>SCI3990 — Science in action research project</strong> (requires Unit Coordinator permission and a strong Year 2 GPA) or <strong>BTH3732 — Environmental microbiology</strong> to build research readiness.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- MODAL 1: SLOT UNIT PICKER MODAL                                   -->
+  <!-- ================================================================= -->
+  <div id="slot-modal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-3xl w-full max-h-[85vh] flex flex-col overflow-hidden">
+      <div class="px-5 py-4 bg-slate-900 text-white flex items-center justify-between">
+        <div>
+          <span id="modal-slot-subtitle" class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Select Unit for Slot</span>
+          <h3 id="modal-slot-title" class="text-base sm:text-lg font-bold">Semester 1, 2027 — Elective Slot 1</h3>
+        </div>
+        <button id="btn-close-slot-modal" type="button" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-bold">
+          ✕ Close
+        </button>
+      </div>
+      <div class="p-4 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+        <span id="modal-slot-rule-hint" class="text-slate-600 font-medium">
+          Showing units offered in Semester 1 at Monash Malaysia.
+        </span>
+        <input id="modal-search-input" type="text" placeholder="Filter units by code or title..." class="rounded-lg border border-slate-300 px-3 py-1.5 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 sm:w-60" />
+      </div>
+      <div id="modal-options-list" class="p-4 overflow-y-auto custom-scrollbar space-y-2.5 flex-1"></div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- MODAL 2: EXPORT / COPY STUDY PLAN MODAL                           -->
+  <!-- ================================================================= -->
+  <div id="export-modal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-2xl w-full flex flex-col overflow-hidden">
+      <div class="px-5 py-4 bg-slate-900 text-white flex items-center justify-between">
+        <div>
+          <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Ready for Web Enrolment System (WES)</span>
+          <h3 class="text-base sm:text-lg font-bold">Your Personalized 2026–2029 Monash Study Plan</h3>
+        </div>
+        <button id="btn-close-export-modal" type="button" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-bold">
+          ✕ Close
+        </button>
+      </div>
+      <div class="p-5 space-y-3">
+        <p class="text-xs text-slate-600">
+          Copy this summary to reference while logging into <strong>WES (Web Enrolment System)</strong> or sharing with your advisor/parents:
+        </p>
+        <textarea id="export-textarea" readonly rows="14" class="w-full rounded-xl border border-slate-300 bg-slate-50 p-3.5 text-xs font-mono text-slate-800 focus:outline-none"></textarea>
+        <div class="flex items-center justify-end gap-2 pt-1">
+          <button id="btn-copy-clipboard" type="button" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition">
+            Copy Plan to Clipboard
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl border border-emerald-500/40 text-xs font-semibold flex items-center gap-2">
+    <span class="text-emerald-400">✔</span>
+    <span id="toast-msg">Study plan updated!</span>
+  </div>
+
+  <!-- Application Script -->
+  <script>
+    // =========================================================================
+    // 1. VERIFIED MONASH UNIVERSITY MALAYSIA UNIT DATABASE (32 UNITS)
+    // =========================================================================
+    const UNITS = {
+      // --- CURRENT SEMESTER (SEM 2, 2026) & COMPULSORY MAJOR CORES ---
+      ENV1800: {
+        code: "ENV1800",
+        name: "Environmental science: A Southeast Asian perspective",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Practical reports, assignments & final examination",
+        prereqText: "None (Compulsory Major Sequence 1 with BIO1011)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Completed in Sem 2, 2026 (Current Semester). Forms your compulsory Environmental/Biology Level 1 sequence with BIO1011.",
+        url: "https://www.monash.edu.my/science/current/undergraduate/course-and-unit-information/unit-offering"
+      },
+      CHM1051: {
+        code: "CHM1051",
+        name: "Chemistry 1 advanced",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "DATA_CHEM",
+        source: "CORE",
+        semesters: ["S1", "S2"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Weekly lab practicals, quizzes & final examination",
+        prereqText: "None (Compulsory Level 1 Science Sequence 2 with CHM1052)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Completed in Sem 2, 2026 (Current Semester). Unlocks CHM1052 — Chemistry 2 advanced and qualifies you for the Extended Major.",
+        url: "https://www.monash.edu.my/science/current/undergraduate/course-and-unit-information/unit-offering"
+      },
+      SCI1020: {
+        code: "SCI1020",
+        name: "Introduction to statistical reasoning",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "DATA_CHEM",
+        source: "CORE",
+        semesters: ["S1", "S2"],
+        hasExam: true,
+        labHours: 0,
+        assessment: "Assignments, workshops, tests & final examination",
+        prereqText: "None (Part A compulsory mathematics/statistics unit)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Completed in Sem 2, 2026 (Current Semester). Directly unlocks STA2216 — Data analysis for science for Sem 2, 2027.",
+        url: "https://handbook.monash.edu/2023/courses/S2000"
+      },
+      SCI1000: {
+        code: "SCI1000",
+        name: "Science communication to influence change",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "DATA_CHEM",
+        source: "CORE",
+        semesters: ["S1", "S2"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% in-semester communication tasks, presentations & portfolio",
+        prereqText: "None (Part A core communication unit)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Completed in Sem 2, 2026 (Current Semester). Fulfills your Part A Science communication requirement.",
+        url: "https://handbook.monash.edu/2023/courses/S2000"
+      },
+      BIO1011: {
+        code: "BIO1011",
+        name: "Blueprints for life",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Lab practicals, quizzes & final examination",
+        prereqText: "None (Compulsory Major Core in Sem 1, 2027)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Mandatory Sem 1, 2027 core. Pairs with ENV1800 to complete your first Level 1 sequence and unlocks all Level 2 biology units.",
+        url: "https://www.monash.edu.my/science/current/undergraduate/course-and-unit-information/unit-offering"
+      },
+      CHM1052: {
+        code: "CHM1052",
+        name: "Chemistry 2 advanced",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "DATA_CHEM",
+        source: "CORE",
+        semesters: ["S1", "S2"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Lab practicals, in-semester tests & final examination",
+        prereqText: "Prerequisite: CHM1051 — Chemistry 1 advanced",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Mandatory Sem 1, 2027 sequence unit. Completes your 6th Level 1 Science unit (36 CP) and second Level 1 Science sequence.",
+        url: "https://www.monash.edu.my/science/current/undergraduate/course-and-unit-information/unit-offering"
+      },
+      ENV2726: {
+        code: "ENV2726",
+        name: "Global conservation and biodiversity",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 2,
+        assessment: "4 case studies, workshops & 3-day/2-night tropical field trip",
+        prereqText: "Completion of Year 1 Biology/Env sequence (BIO1011 + ENV1800)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Compulsory Sem 2, 2027 Major Core. Includes a 3-day/2-night field trip examining local and global biodiversity conservation.",
+        url: "https://handbook.monash.edu/2026/units/ENV2726"
+      },
+      BIO2810: {
+        code: "BIO2810",
+        name: "Introduction to ecological applications",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Field sampling programs, ecological data reports & examination",
+        prereqText: "Prerequisite: BIO1011 — Blueprints for life",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Compulsory Sem 1, 2028 Major Core. Essential prerequisite for BIO3820 — Tropical terrestrial biology.",
+        url: "https://handbook.monash.edu/2025/units/BIO2810"
+      },
+      BTH2820: {
+        code: "BTH2820",
+        name: "Crop science",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Practical reports, assignments & final examination",
+        prereqText: "Prerequisite: BIO1011 or BIO1022",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Compulsory Sem 1, 2028 Major Core covering tropical agriculture, plant physiology, and sustainable crop production.",
+        url: "https://handbook.monash.edu/2027/units/BTH2820"
+      },
+      BIO3820: {
+        code: "BIO3820",
+        name: "Tropical terrestrial biology",
+        level: 3,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 3,
+        assessment: "5-day tropical rainforest field trip project, seminars & reports",
+        prereqText: "Prerequisite: BIO2810 plus 6 CP of ENV or Level 2 BIO",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Compulsory Sem 2, 2028 Major Core. Features a flagship 5-day field trip studying tropical terrestrial ecosystems (manual WES enrolment).",
+        url: "https://handbook.monash.edu/2026/units/BIO3820"
+      },
+      SCI3800: {
+        code: "SCI3800",
+        name: "Science internship",
+        level: 3,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["SUMMER"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% workplace internship placement, logbook & professional report",
+        prereqText: "Completion of Level 2 Science requirements (Manual enrolment)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Recommended Summer 2028 Level 3 Science elective providing real-world industry/NGO conservation placement.",
+        url: "https://www.monash.edu.my/science/current/undergraduate/course-and-unit-information/unit-offering"
+      },
+      BIO3800: {
+        code: "BIO3800",
+        name: "Tropical environmental management",
+        level: 3,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Environmental impact assessments, field reports & examination",
+        prereqText: "Completion of Level 2 Major units",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Compulsory Sem 1, 2029 Final-Year Major Core.",
+        url: "https://www.monash.edu.my/science/current/undergraduate/course-and-unit-information/unit-offering"
+      },
+      BIO3810: {
+        code: "BIO3810",
+        name: "Tropical aquatic biology",
+        level: 3,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Coral reef/mangrove/freshwater field studies, reports & exam",
+        prereqText: "Completion of Level 2 Major units",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Compulsory Sem 1, 2029 Final-Year Major Core.",
+        url: "https://www.monash.edu.my/science/current/undergraduate/course-and-unit-information/unit-offering"
+      },
+      SCI3990: {
+        code: "SCI3990",
+        name: "Science in action research project",
+        level: 3,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "CORE",
+        semesters: ["S1", "S2", "SUMMER"],
+        hasExam: false,
+        labHours: 6,
+        assessment: "100% independent supervised research thesis & oral presentation",
+        prereqText: "Unit coordinator permission & Distinction average (Manual enrolment)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "Recommended Sem 1, 2029 Level 3 Capstone research unit; strongly recommended for S3701 Honours applicants.",
+        url: "https://www.monash.edu.my/science/current/undergraduate/course-and-unit-information/third-year-research-project"
+      },
+
+      // --- ORIGINAL 9 SHORTLISTED UNITS (FROM STUDENT SCREENSHOT) ---
+      FST1800: {
+        code: "FST1800",
+        name: "Fundamentals of food and sensory science",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "FOOD_PHARMA",
+        source: "SHORTLIST",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "10% Wk 6 quiz, 10% group assignment, 20% lab report, 60% final exam",
+        prereqText: "None (Open to all S2000 BSc students)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SHORTLIST WINNER FOR SEM 1, 2027: Offered in Semester 1 at Malaysia. Counts as a Science or Free Elective and unlocks FST2810 in Sem 2.",
+        url: "https://handbook.monash.edu/2027/units/FST1800"
+      },
+      AMU1314: {
+        code: "AMU1314",
+        name: "Writing techniques: Forms and literary devices",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "SHORTLIST",
+        semesters: ["S1"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 15% flash fiction, 35% short story, 30% poetry, 20% essay",
+        prereqText: "None (Prohibition: AMU3857)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SHORTLIST WINNER FOR SEM 1, 2027: Offered in Semester 1 with 100% coursework (no final exam). Ideal workload balancer alongside BIO1011 & CHM1052.",
+        url: "https://handbook.monash.edu/2027/units/AMU1314"
+      },
+      AMU1325: {
+        code: "AMU1325",
+        name: "Introduction to world politics and history",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "SHORTLIST",
+        semesters: ["S1"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 35% document analysis, 40% presentation, 25% reflection",
+        prereqText: "None (Prohibition: ATS1325)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SHORTLIST WINNER FOR SEM 1, 2027: Offered in Semester 1 with 100% coursework. Gateway 1 for the MGLBLSTD08 Global Studies minor.",
+        url: "https://handbook.monash.edu/2026/units/AMU1325"
+      },
+      NUT1024: {
+        code: "NUT1024",
+        name: "Nutrition, health and behaviour",
+        level: 1,
+        cp: 6,
+        faculty: "Medicine & Health Sciences",
+        isScience: false,
+        disc: "FOOD_PHARMA",
+        source: "SHORTLIST",
+        semesters: ["BLOCKED"],
+        hasExam: false,
+        labHours: 2,
+        assessment: "30% essay, 40% report, 30% poster hurdle (Restricted to M2016)",
+        prereqText: "ENROLMENT RULE BLOCK: Must be enrolled in M2016 Bachelor of Human Nutrition",
+        prereqCheck: () => ({ ok: false, reason: "Restricted exclusively to M2016 Bachelor of Human Nutrition students. Take FST1911 — Introduction to nutrition instead." }),
+        verdict: "BLOCKED FOR BSc (S2000): Enrolment rule restricts this unit to M2016 students. Swap for FST1911 — Introduction to nutrition in Sem 1.",
+        url: "https://handbook.monash.edu/2027/units/NUT1024"
+      },
+      AMU1223: {
+        code: "AMU1223",
+        name: "Film, television and screen studies: Approaches",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "SHORTLIST",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 30% + 30% digital content artefacts, 40% oral presentation",
+        prereqText: "None (Offered in Semester 2 & Oct intake only)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SAVE FOR SEM 2, 2027: Only offered in Semester 2 at Malaysia. 100% coursework; pairs with Sem 1 AMU1224 for a Screen Studies minor.",
+        url: "https://handbook.monash.edu/2027/units/AMU1223"
+      },
+      AMU1055: {
+        code: "AMU1055",
+        name: "Introduction to global studies",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "SHORTLIST",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 15% quiz, 30% analytical exercise, 25% group presentation, 30% essay",
+        prereqText: "None (Prohibition: AMU1326; offered in Semester 2 & Oct intake)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SAVE FOR SEM 2, 2027: Only offered in Semester 2. Combines with Sem 1 AMU1325 to unlock Level 2 Global Studies (MGLBLSTD08).",
+        url: "https://handbook.monash.edu/2027/units/AMU1055?year=2027"
+      },
+      AMU1017: {
+        code: "AMU1017",
+        name: "Academic literacies",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "SHORTLIST",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 20% annotated bibliography, 30% lit review, 25% presentation, 25% essay",
+        prereqText: "None (Prohibition: ATS1017; offered in Semester 2 & Oct intake)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SAVE FOR SEM 2, 2027: Only offered in Semester 2. Great 100%-coursework unit for sharpening literature review and academic essay skills.",
+        url: "https://handbook.monash.edu/2024/units/AMU1017"
+      },
+      BPS1042: {
+        code: "BPS1042",
+        name: "Pharmaceutical science in context",
+        level: 1,
+        cp: 6,
+        faculty: "Pharmacy & Pharm Sci",
+        isScience: false,
+        disc: "FOOD_PHARMA",
+        source: "SHORTLIST",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 2,
+        assessment: "75% project presentations (3 × 25%), 10% press release, 10% learning plan, 5% quizzes (Hurdles apply)",
+        prereqText: "None (Offered in Semester 2 only at Malaysia)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SAVE FOR SEM 2, 2027: Offered in Semester 2 only. Explores drug discovery biology, medicinal chemistry & formulation with presentation-based grading.",
+        url: "https://handbook.monash.edu/2027/units/BPS1042"
+      },
+      ANT1800: {
+        code: "ANT1800",
+        name: "Introduction to anatomy",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "SHORTLIST",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 6,
+        assessment: "30% theory tests (2 × 15%), 30% practical exam, 40% final exam (9 hrs/wk scheduled classes)",
+        prereqText: "None (Prohibition: ANT2331; offered in Semester 2 only)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SAVE FOR SEM 2, 2027 (CAUTION — HEAVY LOAD): Offered in Semester 2 only. Counts as Science, but has 9 hrs/wk of classes and two major exams.",
+        url: "https://handbook.monash.edu/2027/units/ANT1800"
+      },
+
+      // --- EXPANDED BIOLOGY, BIOTECH, DATA & HUMANITIES ADDITIONS ---
+      FST1911: {
+        code: "FST1911",
+        name: "Introduction to nutrition",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "FOOD_PHARMA",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 2,
+        assessment: "In-semester nutrition assignments, quizzes & final examination",
+        prereqText: "None (Official School of Science nutrition unit for BSc)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "TOP ADDITION FOR SEM 1, 2027: Directly replaces blocked NUT1024! Open to all S2000 BSc students and taught in Semester 1.",
+        url: "https://handbook.monash.edu/2027/units/FST1911"
+      },
+      BTH1802: {
+        code: "BTH1802",
+        name: "Trends in biotechnology",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Laboratory practicals, biotechnology assignments & final examination",
+        prereqText: "None (Formerly titled Fundamentals of biotechnology)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "TOP SCIENCE ADDITION FOR SEM 1, 2027: Covers environmental, agricultural, and medical biotechnology, bioprospecting, and GMOs.",
+        url: "https://handbook.monash.edu/2027/units/BTH1802"
+      },
+      BIO1022: {
+        code: "BIO1022",
+        name: "Life on Earth",
+        level: 1,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Weekly laboratory practicals, quizzes & final examination",
+        prereqText: "None (Offered in Semester 2 & Oct intake at Malaysia)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "STRATEGIC SEM 2, 2027 UNLOCK: Taking BIO1022 unlocks GEN2041 (Foundations of genetics), GEN2052 (Genomics), and the Applied Microbiology minor.",
+        url: "https://handbook.monash.edu/2027/units/BIO1022"
+      },
+      AMU1224: {
+        code: "AMU1224",
+        name: "Film, television and screen studies: Forms",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 30% film pitch, 30% analytical exercise, 40% short film production",
+        prereqText: "None (Offered in Semester 1 at Malaysia)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "MISSING SEM 1 PAIR FOR AMU1223: Since shortlisted AMU1223 is Sem 2 only, take AMU1224 in Sem 1 to study film & produce a short film!",
+        url: "https://handbook.monash.edu/2027/units/AMU1224"
+      },
+      AMU1333: {
+        code: "AMU1333",
+        name: "Introduction to professional writing",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 25% career development task, 25% article, 50% practice portfolio",
+        prereqText: "None (Offered in Semester 2 at Malaysia)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "MISSING SEM 2 PAIR FOR AMU1314: Pairs with Sem 1 AMU1314 to unlock the MWRITING03 Writing minor and teaches campaign/journalism writing.",
+        url: "https://handbook.monash.edu/2026/units/AMU1333"
+      },
+      AMU1277: {
+        code: "AMU1277",
+        name: "Media studies",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 60% annotated bibliography, 40% presentation",
+        prereqText: "None (Offered in Semester 1 at Malaysia)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "GREAT SEM 1 HUMANITIES OPTION: Only 2 assessment items all semester (no exam); gateway to the MCOMMS07 Communication minor.",
+        url: "https://handbook.monash.edu/2026/units/AMU1277"
+      },
+      AMU1278: {
+        code: "AMU1278",
+        name: "Communication technologies and practices",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 20% video/log, 30% smartphone data reflection, 20% quiz, 30% essay",
+        prereqText: "None (Offered in Semester 2 at Malaysia)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SEM 2 COMMUNICATION PAIR: Pairs with Sem 1 AMU1277 to unlock Level 2 Communication & Media units.",
+        url: "https://handbook.monash.edu/2026/units/AMU1278"
+      },
+      AMU1310: {
+        code: "AMU1310",
+        name: "Introduction to gender studies",
+        level: 1,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 40% essay, 20% quiz, 20% concept map, 20% reflection",
+        prereqText: "None (Offered in Semester 1 at Malaysia)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SEM 1 SOCIAL JUSTICE ELECTIVE: Examines gender, sustainability, and intersectionality across Asian and global contexts.",
+        url: "https://handbook.monash.edu/2026/units/AMU1310"
+      },
+      STA2216: {
+        code: "STA2216",
+        name: "Data analysis for science",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "DATA_CHEM",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 1,
+        assessment: "Computer statistical workshops, assignments & final examination",
+        prereqText: "Prerequisite: SCI1020 or STA1010 (Met in Sem 2, 2026!)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "BEST SEM 2, 2027 LEVEL 2 SCIENCE PICK: Directly unlocked by your current SCI1020 unit. Essential statistical modelling for field ecology.",
+        url: "https://handbook.monash.edu/2026/units/sta2216"
+      },
+      SCI2716: {
+        code: "SCI2716",
+        name: "Laboratory safety and risk management",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "DATA_CHEM",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "Risk assessments, safety audits & workshop tasks (2h tutorial/wk, no wet lab)",
+        prereqText: "Prerequisite: 24 CP of Level 1 Science units (Met in Sem 2, 2026!)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "LIGHTEST SEM 2, 2027 LEVEL 2 SCIENCE PICK: No wet lab (2h tutorial + 2h online lecture/wk); teaches occupational & lab risk management.",
+        url: "https://handbook.monash.edu/2027/units/SCI2716"
+      },
+      BTH2732: {
+        code: "BTH2732",
+        name: "Recombinant DNA technology",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Molecular cloning lab practicals, reports & final examination",
+        prereqText: "Prerequisite: BIO1011 — Blueprints for life",
+        prereqCheck: (plan) => ({
+          ok: planHasUnitBefore(plan, "BIO1011", "s2_2027"),
+          reason: "Requires BIO1011 — Blueprints for life in Sem 1, 2027."
+        }),
+        verdict: "GREAT SEM 2, 2027 LEVEL 2 BIO LAB PICK: Requires only BIO1011 (does not require BIO1022) and builds core DNA/PCR lab skills.",
+        url: "https://handbook.monash.edu/2026/units/BTH2732"
+      },
+      BTH2752: {
+        code: "BTH2752",
+        name: "Cellular metabolomics of macronutrients",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "36h lab classes/sem, science magazine diet issue assignment (10%) & exam",
+        prereqText: "Prerequisite: CHM1051/1052 plus BIO1011/1022",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SEM 2, 2027 LEVEL 2 BIOCHEMISTRY/NUTRITION PICK: Unlocked by CHM1051 + BIO1011; bridges cellular biochemistry and nutrition.",
+        url: "https://handbook.monash.edu/2025/units/BTH2752"
+      },
+      FST2810: {
+        code: "FST2810",
+        name: "Food bioprocess technology",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "FOOD_PHARMA",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Food fermentation/bioprocess labs, reports & final examination",
+        prereqText: "Prerequisite: FST1800 and CHM1052",
+        prereqCheck: (plan) => ({
+          ok: planHasUnitBefore(plan, "FST1800", "s2_2027") && planHasUnitBefore(plan, "CHM1052", "s2_2027"),
+          reason: "Requires taking FST1800 — Fundamentals of food and sensory science in Sem 1, 2027."
+        }),
+        verdict: "SEM 2, 2027 FOOD SCIENCE FOLLOW-UP: Unlocked if you take FST1800 + CHM1052 in Sem 1, 2027.",
+        url: "https://handbook.monash.edu/2027/units/FST2810"
+      },
+      CHM2962: {
+        code: "CHM2962",
+        name: "Food chemistry",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "FOOD_PHARMA",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Analytical food chemistry labs, reports & final examination",
+        prereqText: "Prerequisite: CHM1052 — Chemistry 2 advanced",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SEM 2, 2027 LEVEL 2 CHEMISTRY/FOOD PICK: Unlocked by CHM1052; great for students interested in food analysis and natural products.",
+        url: "https://handbook.monash.edu/2026/units/CHM2962"
+      },
+      PHY2820: {
+        code: "PHY2820",
+        name: "Physiology of human health",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 1.5,
+        assessment: "20% quizzes, 10% lab reports, 10% lit review, 10% presentation, 5% sim, 45% exam",
+        prereqText: "None (Counted as Level 2 Science; biweekly 3h labs)",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "SMARTER ALTERNATIVE TO ANT1800: Covers human endocrine, reproductive & GI physiology at Level 2 so it doesn't use up your Level 1 cap!",
+        url: "https://handbook.monash.edu/2027/units/phy2820?year=2027"
+      },
+      BTH2830: {
+        code: "BTH2830",
+        name: "Fundamentals of microbiology",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Microbiology wet labs, practical exam/reports & final examination",
+        prereqText: "Prerequisite: BIO1011 — Blueprints for life",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "EXTENDED MAJOR (TRENVBIO06) CORE: Take in Sem 1, 2028 to upgrade your 48-CP Major to the 72-CP Extended Major in Tropical Environmental Biology.",
+        url: "https://handbook.monash.edu/2027/units/BTH2830"
+      },
+      BTH3732: {
+        code: "BTH3732",
+        name: "Environmental microbiology",
+        level: 3,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Microbial ecology lab practicals, assignments & final examination",
+        prereqText: "Prerequisite: BTH2830 — Fundamentals of microbiology",
+        prereqCheck: (plan) => ({
+          ok: planHasUnitAnywhere(plan, "BTH2830"),
+          reason: "Requires BTH2830 — Fundamentals of microbiology."
+        }),
+        verdict: "HIGH-SYNERGY LEVEL 3 ELECTIVE: Explores soil, water, and tropical microbial ecosystems; counts toward the TRENVBIO06 Extended Major.",
+        url: "https://handbook.monash.edu/2025/units/BTH3732"
+      },
+      BTH2741: {
+        code: "BTH2741",
+        name: "Biochemistry and metabolism of biomolecules",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "20% mini-reviews, 30% lab practical exercises, 50% final exam",
+        prereqText: "Prerequisite: CHM1051 plus BIO1011",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "CAP-SAFE SEM 1, 2028 SCIENCE ELECTIVE: Builds molecular biochemistry skills using your first-year Chemistry and Biology foundation.",
+        url: "https://handbook.monash.edu/2027/units/BTH2741"
+      },
+      GEN2041: {
+        code: "GEN2041",
+        name: "Foundations of genetics",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: true,
+        labHours: 2.5,
+        assessment: "Genetics workshops, laboratory sessions & final examination",
+        prereqText: "Prerequisite: BIO1011 AND BIO1022 — Life on Earth",
+        prereqCheck: (plan) => ({
+          ok: planHasUnitAnywhere(plan, "BIO1022"),
+          reason: "Requires taking BIO1022 — Life on Earth in Sem 2, 2027."
+        }),
+        verdict: "SEM 1, 2028 CONSERVATION GENETICS PICK: Unlocked if you take BIO1022 in Sem 2, 2027.",
+        url: "https://handbook.monash.edu/2025/units/GEN2041"
+      },
+      GEN2052: {
+        code: "GEN2052",
+        name: "Genomics and population genetics",
+        level: 2,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: true,
+        labHours: 3,
+        assessment: "Population genetics labs, bioinformatics tasks & final exam",
+        prereqText: "Prerequisite: BIO1022 — Life on Earth",
+        prereqCheck: (plan) => ({
+          ok: planHasUnitAnywhere(plan, "BIO1022"),
+          reason: "Requires taking BIO1022 — Life on Earth in Sem 2, 2027."
+        }),
+        verdict: "SEM 2, 2028 POPULATION GENOMICS PICK: Ideal for biodiversity & endangered species genetics (requires BIO1022).",
+        url: "https://handbook.monash.edu/2027/units/GEN2052"
+      },
+      BTH3260: {
+        code: "BTH3260",
+        name: "Microbiome science",
+        level: 3,
+        cp: 6,
+        faculty: "Science",
+        isScience: true,
+        disc: "BIO",
+        source: "EXPANDED",
+        semesters: ["S2"],
+        hasExam: false,
+        labHours: 2,
+        assessment: "Case-based learning, role-play mini-symposium & research tasks",
+        prereqText: "Completion of Level 2 Biology/Biotechnology units",
+        prereqCheck: () => ({ ok: true }),
+        verdict: "EXCELLENT SEM 2, 2028 LEVEL 3 SCIENCE PICK: Cutting-edge host and environmental microbiome science with active symposium assessments.",
+        url: "https://handbook.monash.edu/2027/units/BTH3260"
+      },
+      AMU2814: {
+        code: "AMU2814",
+        name: "Transforming community: Project design and public relations for social campaigns",
+        level: 2,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): 30% essay, 30% campaign report, 10% quiz, 10% pitch, 20% media task",
+        prereqText: "Prerequisite: 12 CP (2 units) of Level 1 Arts (AMU1xxx) units",
+        prereqCheck: (plan) => ({
+          ok: countL1ArtsIn2027(plan) >= 2,
+          reason: "Requires completing at least 2 Level 1 Arts (AMU1xxx) units in 2027."
+        }),
+        verdict: "TOP LEVEL 2 HUMANITIES PICK FOR SEM 1, 2028: Teaches you to design real NGO/government social & environmental PR campaigns without breaking the L1 cap!",
+        url: "https://handbook.monash.edu/2027/units/AMU2814"
+      },
+      AMU2018: {
+        code: "AMU2018",
+        name: "States, markets and global capitalism",
+        level: 2,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): Policy essays, case analysis & presentations",
+        prereqText: "12 CP of Level 1 Arts units (e.g., AMU1325 + AMU1055)",
+        prereqCheck: (plan) => ({
+          ok: countL1ArtsIn2027(plan) >= 1,
+          reason: "Recommended after completing Level 1 Arts units (AMU1325 / AMU1055)."
+        }),
+        verdict: "SEM 1, 2028 GLOBAL STUDIES MINOR UNIT: Explores political economy, trade, and sustainability governance.",
+        url: "https://handbook.monash.edu/2027/units/AMU2018"
+      },
+      AMU2020: {
+        code: "AMU2020",
+        name: "International human rights",
+        level: 2,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "EXPANDED",
+        semesters: ["S1", "S2"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): Human rights case studies, essays & presentations",
+        prereqText: "12 CP of Level 1 Arts units (e.g., AMU1325 + AMU1055)",
+        prereqCheck: (plan) => ({
+          ok: countL1ArtsIn2027(plan) >= 1,
+          reason: "Recommended after completing Level 1 Arts units (AMU1325 / AMU1055)."
+        }),
+        verdict: "SEM 1, 2028 GLOBAL STUDIES MINOR UNIT: Pairs with AMU1325 + AMU1055 + AMU2018 to complete a 24-CP Global Studies minor.",
+        url: "https://handbook.monash.edu/2026/units/AMU2020"
+      },
+      AMU2315: {
+        code: "AMU2315",
+        name: "Strategies in writing experiments",
+        level: 2,
+        cp: 6,
+        faculty: "Arts (SASS)",
+        isScience: false,
+        disc: "ARTS",
+        source: "EXPANDED",
+        semesters: ["S1"],
+        hasExam: false,
+        labHours: 0,
+        assessment: "100% Coursework (No Exam): Creative and analytical writing portfolio",
+        prereqText: "Prerequisite: AMU1314 or 12 CP of Level 1 Arts",
+        prereqCheck: (plan) => ({
+          ok: planHasUnitAnywhere(plan, "AMU1314") || countL1ArtsIn2027(plan) >= 1,
+          reason: "Requires AMU1314 — Writing techniques or Level 1 Arts units."
+        }),
+        verdict: "SEM 1, 2028 WRITING MINOR UNIT: Continues the MWRITING03 Writing minor after AMU1314 and AMU1333.",
+        url: "https://handbook.monash.edu/2026/units/AMU2315"
+      }
+    };
+
+    // =========================================================================
+    // 2. PRESET STRATEGIC PATHWAYS
+    // =========================================================================
+    const PRESET_PATHWAYS = {
+      global_policy: {
+        id: "global_policy",
+        title: "Pathway 1: Global Policy & Balanced GPA Track (Global Studies Minor)",
+        badge: "48-CP Major + Global Studies Minor",
+        summary: "Uses your shortlisted 100%-coursework Arts units (AMU1314 & AMU1325 in Sem 1; AMU1055 & AMU1223 in Sem 2) to keep your 2027 exam load light, selects STA2216 — Data analysis for science for your Sem 2 Level 2 Science slot, and completes a 24-CP Global Studies minor (AMU2018 & AMU2020) in Sem 1, 2028 without breaking the 10-unit Level 1 cap.",
+        slots: {
+          s1_2027_elec1: "AMU1314",
+          s1_2027_elec2: "AMU1325",
+          s2_2027_sci: "STA2216",
+          s2_2027_elec1: "AMU1055",
+          s2_2027_elec2: "AMU1223",
+          s1_2028_elec1: "AMU2018",
+          s1_2028_elec2: "AMU2020",
+          s2_2028_sci3: "BTH3260",
+          s2_2028_sci2a: "BTH2732",
+          s2_2028_sci2b: "SCI2716"
+        }
+      },
+      extended_major: {
+        id: "extended_major",
+        title: "Pathway 2: 72-CP Extended Major Specialist (TRENVBIO06)",
+        badge: "72-CP Extended Major",
+        summary: "Upgrades your 48-CP Major (TRENVBIO05) to the prestigious 72-CP Extended Major in Tropical Environmental Biology (TRENVBIO06) by adding BTH2830 — Fundamentals of microbiology and BTH3732 — Environmental microbiology alongside your shortlisted units.",
+        slots: {
+          s1_2027_elec1: "BTH1802",
+          s1_2027_elec2: "AMU1314",
+          s2_2027_sci: "STA2216",
+          s2_2027_elec1: "BIO1022",
+          s2_2027_elec2: "AMU1055",
+          s1_2028_elec1: "BTH2830",
+          s1_2028_elec2: "BTH3732",
+          s2_2028_sci3: "BTH3260",
+          s2_2028_sci2a: "BTH2732",
+          s2_2028_sci2b: "SCI2716"
+        }
+      },
+      genetics_biotech: {
+        id: "genetics_biotech",
+        title: "Pathway 3: Conservation Genetics & Molecular Biotech Track",
+        badge: "Major + Genetics & Biotech Depth",
+        summary: "Takes BIO1022 — Life on Earth in Semester 2, 2027 to unlock GEN2041 — Foundations of genetics and GEN2052 — Genomics and population genetics in 2028, giving you a powerful molecular and conservation genetics toolkit.",
+        slots: {
+          s1_2027_elec1: "BTH1802",
+          s1_2027_elec2: "AMU1325",
+          s2_2027_sci: "BTH2732",
+          s2_2027_elec1: "BIO1022",
+          s2_2027_elec2: "BPS1042",
+          s1_2028_elec1: "GEN2041",
+          s1_2028_elec2: "BTH2830",
+          s2_2028_sci3: "BTH3260",
+          s2_2028_sci2a: "GEN2052",
+          s2_2028_sci2b: "STA2216"
+        }
+      },
+      food_pharma: {
+        id: "food_pharma",
+        title: "Pathway 4: Food Science, Nutrition & Bioactive Discovery Track",
+        badge: "Major + Food/Pharma Breadth",
+        summary: "Replaces restricted NUT1024 with FST1800 — Fundamentals of food and sensory science and FST1911 — Introduction to nutrition in Sem 1, 2027, unlocking FST2810 — Food bioprocess technology and BPS1042 — Pharmaceutical science in context in Sem 2, 2027.",
+        slots: {
+          s1_2027_elec1: "FST1800",
+          s1_2027_elec2: "FST1911",
+          s2_2027_sci: "FST2810",
+          s2_2027_elec1: "BPS1042",
+          s2_2027_elec2: "AMU1223",
+          s1_2028_elec1: "BTH2741",
+          s1_2028_elec2: "BTH2830",
+          s2_2028_sci3: "BTH3260",
+          s2_2028_sci2a: "CHM2962",
+          s2_2028_sci2b: "STA2216"
+        }
+      },
+      media_writing: {
+        id: "media_writing",
+        title: "Pathway 5: Environmental Media, Writing & Social Campaigns Track",
+        badge: "Major + Writing/Screen/PR",
+        summary: "Combines creative & professional writing (AMU1314 + AMU1333) with Film & Screen Studies (AMU1224 + AMU1223) in 2027, then adds AMU2814 — Transforming community: Project design and public relations for social campaigns and AMU2315 in Sem 1, 2028.",
+        slots: {
+          s1_2027_elec1: "AMU1314",
+          s1_2027_elec2: "AMU1224",
+          s2_2027_sci: "SCI2716",
+          s2_2027_elec1: "AMU1333",
+          s2_2027_elec2: "AMU1223",
+          s1_2028_elec1: "AMU2814",
+          s1_2028_elec2: "AMU2315",
+          s2_2028_sci3: "BTH3260",
+          s2_2028_sci2a: "STA2216",
+          s2_2028_sci2b: "PHY2820"
+        }
+      }
+    };
+
+    // =========================================================================
+    // 3. APPLICATION STATE
+    // =========================================================================
+    const state = {
+      activeTab: "advisor",
+      quiz: {
+        q1: "light",
+        q2: "writing",
+        q3: "just_browsing",
+        q4: "global_policy",
+        q5: "STA2216"
+      },
+      recommendedPresetKey: "global_policy",
+      plan: { ...PRESET_PATHWAYS.global_policy.slots },
+      activeSlotEditing: null,
+      mpuChecked: {
+        MPU3143: false,
+        MPU3172: false,
+        MPU3312: false,
+        MPU3222: false,
+        MPU3322: false,
+        MPU3412: false
+      }
+    };
+
+    // Slot metadata definitions
+    const SLOT_DEFS = {
+      s1_2027_elec1: {
+        label: "Semester 1, 2027 — Elective Slot 1",
+        sem: "S1",
+        allowedLevels: [1, 2],
+        requireScience: false,
+        hint: "Choose any Semester 1 Science or Arts (AMU) elective. Level 1 units count toward your 10-unit Level 1 cap."
+      },
+      s1_2027_elec2: {
+        label: "Semester 1, 2027 — Elective Slot 2",
+        sem: "S1",
+        allowedLevels: [1, 2],
+        requireScience: false,
+        hint: "Choose any Semester 1 Science or Arts (AMU) elective. Pairing at least one 100%-coursework AMU unit keeps June exams manageable."
+      },
+      s2_2027_sci: {
+        label: "Semester 2, 2027 — Science Unit (Level 2 or 3)",
+        sem: "S2",
+        allowedLevels: [2, 3],
+        requireScience: true,
+        hint: "STRICT RULE: Must be a Level 2 or Level 3 Faculty of Science unit offered in Semester 2 (Level 1 units cannot go in this slot)."
+      },
+      s2_2027_elec1: {
+        label: "Semester 2, 2027 — Elective Slot 3",
+        sem: "S2",
+        allowedLevels: [1, 2],
+        requireScience: false,
+        hint: "Choose any Semester 2 Science, Pharmacy (BPS1042), or Arts (AMU) elective."
+      },
+      s2_2027_elec2: {
+        label: "Semester 2, 2027 — Elective Slot 4",
+        sem: "S2",
+        allowedLevels: [1, 2],
+        requireScience: false,
+        hint: "Choose any Semester 2 Science, Pharmacy (BPS1042), or Arts (AMU) elective."
+      },
+      s1_2028_elec1: {
+        label: "Semester 1, 2028 — Elective Slot 5 (Cap-Safe L2/L3 Recommended)",
+        sem: "S1",
+        allowedLevels: [1, 2, 3],
+        requireScience: false,
+        hint: "CRITICAL CAP RULE: If you already took 4 Level 1 electives in 2027 (reaching 10/10 Level 1 units), this slot MUST be a Level 2 or Level 3 (2xxx/3xxx) unit!"
+      },
+      s1_2028_elec2: {
+        label: "Semester 1, 2028 — Elective Slot 6 (Cap-Safe L2/L3 Recommended)",
+        sem: "S1",
+        allowedLevels: [1, 2, 3],
+        requireScience: false,
+        hint: "CRITICAL CAP RULE: If you already took 4 Level 1 electives in 2027 (reaching 10/10 Level 1 units), this slot MUST be a Level 2 or Level 3 (2xxx/3xxx) unit!"
+      },
+      s2_2028_sci3: {
+        label: "Semester 2, 2028 — Science Unit (Level 3)",
+        sem: "S2",
+        allowedLevels: [3],
+        requireScience: true,
+        hint: "Must be a Level 3 Science unit offered in Semester 2 (e.g., BTH3260 — Microbiome science)."
+      },
+      s2_2028_sci2a: {
+        label: "Semester 2, 2028 — Science Unit A (Level 2 or 3)",
+        sem: "S2",
+        allowedLevels: [2, 3],
+        requireScience: true,
+        hint: "Must be a Level 2 or Level 3 Science unit offered in Semester 2."
+      },
+      s2_2028_sci2b: {
+        label: "Semester 2, 2028 — Science Unit B (Level 2 or 3)",
+        sem: "S2",
+        allowedLevels: [2, 3],
+        requireScience: true,
+        hint: "Must be a Level 2 or Level 3 Science unit offered in Semester 2."
+      }
+    };
+
+    // =========================================================================
+    // 4. HELPER & VALIDATION FUNCTIONS
+    // =========================================================================
+    function getAllPlanUnitCodes(plan) {
+      return [
+        "ENV1800", "CHM1051", "SCI1020", "SCI1000", // Sem 2, 2026
+        "BIO1011", "CHM1052", plan.s1_2027_elec1, plan.s1_2027_elec2, // Sem 1, 2027
+        "ENV2726", plan.s2_2027_sci, plan.s2_2027_elec1, plan.s2_2027_elec2, // Sem 2, 2027
+        "BIO2810", "BTH2820", plan.s1_2028_elec1, plan.s1_2028_elec2, // Sem 1, 2028
+        "BIO3820", plan.s2_2028_sci3, plan.s2_2028_sci2a, plan.s2_2028_sci2b, // Sem 2, 2028
+        "SCI3800", // Summer 2028
+        "BIO3800", "BIO3810", "SCI3990" // Sem 1, 2029
+      ];
+    }
+
+    function planHasUnitBefore(plan, code, targetSem) {
+      const s2_2026 = ["ENV1800", "CHM1051", "SCI1020", "SCI1000"];
+      const s1_2027 = ["BIO1011", "CHM1052", plan.s1_2027_elec1, plan.s1_2027_elec2];
+      if (targetSem === "s2_2027") {
+        return s2_2026.includes(code) || s1_2027.includes(code);
+      }
+      return getAllPlanUnitCodes(plan).includes(code);
+    }
+
+    function planHasUnitAnywhere(plan, code) {
+      return getAllPlanUnitCodes(plan).includes(code);
+    }
+
+    function countL1ArtsIn2027(plan) {
+      const codes2027 = [plan.s1_2027_elec1, plan.s1_2027_elec2, plan.s2_2027_elec1, plan.s2_2027_elec2];
+      return codes2027.filter(c => UNITS[c] && UNITS[c].disc === "ARTS" && UNITS[c].level === 1).length;
+    }
+
+    function evaluatePlan(plan) {
+      const allCodes = getAllPlanUnitCodes(plan);
+      const units = allCodes.map(c => UNITS[c]).filter(Boolean);
+
+      const l1Units = units.filter(u => u.level === 1);
+      const l1SciUnits = units.filter(u => u.level === 1 && u.isScience);
+      const l23SciUnits = units.filter(u => (u.level === 2 || u.level === 3) && u.isScience);
+      const l3SciUnits = units.filter(u => u.level === 3 && u.isScience);
+
+      const codes2027 = [
+        "BIO1011", "CHM1052", plan.s1_2027_elec1, plan.s1_2027_elec2,
+        "ENV2726", plan.s2_2027_sci, plan.s2_2027_elec1, plan.s2_2027_elec2
+      ];
+      const exams2027 = codes2027.filter(c => UNITS[c] && UNITS[c].hasExam).length;
+
+      const issues = [];
+
+      // 1. Check Level 1 Cap (Max 10)
+      if (l1Units.length > 10) {
+        issues.push(`Level 1 Cap Exceeded: You have ${l1Units.length} Level 1 (1xxx) units, but S2000 allows a maximum of 10 Level 1 units (60 CP). Swap ${l1Units.length - 10} Level 1 elective(s) in Sem 1, 2028 for Level 2/3 (2xxx/3xxx) units.`);
+      }
+
+      // 2. Check Level 2/3 Science Minimum (Min 10)
+      if (l23SciUnits.length < 10) {
+        issues.push(`Level 2/3 Science Shortfall: You have ${l23SciUnits.length} Level 2/3 Science units (minimum 10 required).`);
+      }
+
+      // 3. Check Prerequisites & Restrictions on customizable slots
+      Object.keys(SLOT_DEFS).forEach(slotKey => {
+        const uCode = plan[slotKey];
+        const u = UNITS[uCode];
+        if (!u) return;
+        const check = u.prereqCheck(plan);
+        if (!check.ok) {
+          issues.push(`${u.code} (${u.name}): ${check.reason}`);
+        }
+      });
+
+      // Determine Extended Major or Minor status
+      let trackLabel = "Major (48 CP)";
+      if (allCodes.includes("BTH2830") && (allCodes.includes("BTH3732") || allCodes.includes("SCI3800") || allCodes.includes("SCI3990"))) {
+        trackLabel = "Extended Major (72 CP)";
+      } else if (allCodes.includes("AMU1325") && allCodes.includes("AMU1055") && (allCodes.includes("AMU2018") || allCodes.includes("AMU2020"))) {
+        trackLabel = "Major + Global Studies Minor";
+      } else if (allCodes.includes("AMU1314") && allCodes.includes("AMU1333") && allCodes.includes("AMU2315")) {
+        trackLabel = "Major + Writing Track";
+      } else if (allCodes.includes("BIO1022") && (allCodes.includes("GEN2041") || allCodes.includes("GEN2052"))) {
+        trackLabel = "Major + Genetics Track";
+      }
+
+      return {
+        totalCP: units.length * 6,
+        l1Count: l1Units.length,
+        l1SciCount: l1SciUnits.length,
+        l23SciCount: l23SciUnits.length,
+        l3SciCount: l3SciUnits.length,
+        exams2027,
+        trackLabel,
+        issues
+      };
+    }
+
+    // =========================================================================
+    // 5. RENDERING FUNCTIONS
+    // =========================================================================
+    function showToast(message) {
+      const box = document.getElementById("toast-box");
+      const msg = document.getElementById("toast-msg");
+      msg.textContent = message;
+      box.classList.remove("hidden");
+      if (window._toastTimer) clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        box.classList.add("hidden");
+      }, 3200);
+    }
+
+    function updateStatusBarAndBanner() {
+      const stats = evaluatePlan(state.plan);
+
+      document.getElementById("stat-total-cp").textContent = `${stats.totalCP} / 144 CP`;
+
+      const l1El = document.getElementById("stat-l1-cap");
+      const l1Box = document.getElementById("stat-box-l1cap");
+      l1El.textContent = `${stats.l1Count} / 10 Units`;
+      if (stats.l1Count > 10) {
+        l1El.className = "font-bold text-rose-400";
+        l1Box.className = "bg-rose-950/80 rounded-lg px-2.5 py-1.5 border border-rose-500 flex items-center justify-between";
+      } else if (stats.l1Count === 10) {
+        l1El.className = "font-bold text-amber-300";
+        l1Box.className = "bg-slate-800/90 rounded-lg px-2.5 py-1.5 border border-amber-500/50 flex items-center justify-between";
+      } else {
+        l1El.className = "font-bold text-emerald-400";
+        l1Box.className = "bg-slate-800/90 rounded-lg px-2.5 py-1.5 border border-slate-700 flex items-center justify-between";
+      }
+
+      document.getElementById("stat-l1-sci").textContent = `${stats.l1SciCount} / 6 Met`;
+      document.getElementById("stat-l23-sci").textContent = `${stats.l23SciCount} / 10 Units`;
+      document.getElementById("stat-2027-exams").textContent = `${stats.exams2027} / 8 Units`;
+      document.getElementById("stat-track-badge").textContent = stats.trackLabel;
+
+      const banner = document.getElementById("validation-banner");
+      const icon = document.getElementById("validation-icon");
+      const title = document.getElementById("validation-title");
+      const desc = document.getElementById("validation-desc");
+
+      if (stats.issues.length > 0) {
+        banner.className = "rounded-xl border p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-rose-50 border-rose-300 text-rose-950";
+        icon.textContent = "⚠️";
+        title.textContent = `Course Advisor Alert (${stats.issues.length} Rule Issue${stats.issues.length > 1 ? "s" : ""} Detected)`;
+        desc.className = "text-xs text-rose-800 mt-0.5";
+        desc.textContent = stats.issues.join(" • ");
+      } else {
+        banner.className = "rounded-xl border p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-emerald-50 border-emerald-200 text-emerald-900";
+        icon.textContent = "✅";
+        title.textContent = `All S2000 — Bachelor of Science & Student Visa Rules Satisfied (${stats.trackLabel})`;
+        desc.className = "text-xs text-emerald-800 mt-0.5";
+        desc.textContent = `Level 1 Units: ${stats.l1Count}/10 Max (${stats.l1Count * 6} CP) • Level 2/3 Science Units: ${stats.l23SciCount} (${stats.l3SciCount} at Level 3) • 2027 Final Exams: ${stats.exams2027} out of 8 units.`;
+      }
+    }
+
+    // Compute Quiz Recommendation
+    function computeQuizRecommendation() {
+      const { q1, q2, q3, q4, q5 } = state.quiz;
+
+      // Start from base pathway matching q4
+      let baseKey = "global_policy";
+      if (q4 === "extended_major") baseKey = "extended_major";
+      else if (q4 === "genetics_biotech") baseKey = "genetics_biotech";
+      else if (q4 === "media_writing") baseKey = "media_writing";
+      else if (q3 === "food_nut") baseKey = "food_pharma";
+
+      const customSlots = { ...PRESET_PATHWAYS[baseKey].slots };
+
+      // Adjust Sem 1, 2027 electives based on Q1, Q2, Q3
+      if (q3 === "food_nut") {
+        customSlots.s1_2027_elec1 = "FST1800";
+        customSlots.s1_2027_elec2 = q1 === "light" ? "AMU1314" : "FST1911";
+      } else if (q1 === "heavy_sci") {
+        customSlots.s1_2027_elec1 = "BTH1802";
+        customSlots.s1_2027_elec2 = "FST1800";
+      } else if (q1 === "balanced") {
+        customSlots.s1_2027_elec1 = "FST1800";
+        customSlots.s1_2027_elec2 = q4 === "global_policy" ? "AMU1325" : "AMU1314";
+      }
+
+      // Adjust Sem 2, 2027 Level 2 Science slot based on Q5
+      if (q5 === "STA2216") {
+        customSlots.s2_2027_sci = "STA2216";
+      } else if (q5 === "SCI2716") {
+        customSlots.s2_2027_sci = "SCI2716";
+      } else if (q5 === "BTH2732") {
+        customSlots.s2_2027_sci = customSlots.s1_2027_elec1 === "FST1800" && q3 === "food_nut" ? "FST2810" : "BTH2732";
+      }
+
+      // Adjust Sem 2, 2027 electives if Pharma was chosen in Q3 or Presentations in Q2
+      if (q3 === "pharma_bio" || q2 === "presentations") {
+        if (customSlots.s2_2027_elec1 !== "BIO1022") {
+          customSlots.s2_2027_elec1 = "BPS1042";
+        } else {
+          customSlots.s2_2027_elec2 = "BPS1042";
+        }
+      }
+
+      state.recommendedPresetKey = baseKey;
+      state._computedCustomSlots = customSlots;
+
+      const presetMeta = PRESET_PATHWAYS[baseKey];
+      document.getElementById("rec-pathway-title").textContent = presetMeta.title;
+      document.getElementById("rec-match-badge").textContent = presetMeta.badge;
+      document.getElementById("rec-pathway-summary").textContent = presetMeta.summary;
+
+      const formatLi = (code, role) => {
+        const u = UNITS[code];
+        if (!u) return "";
+        const examBadge = u.hasExam ? "Exam" : "100% Coursework";
+        return `<li class="flex items-start justify-between gap-2">
+          <span>• <strong>${u.code} — ${u.name}</strong></span>
+          <span class="text-slate-400 shrink-0">[${role} · ${examBadge}]</span>
+        </li>`;
+      };
+
+      document.getElementById("rec-list-s1-2027").innerHTML = [
+        formatLi("BIO1011", "Major Core"),
+        formatLi("CHM1052", "Seq 2 Core"),
+        formatLi(customSlots.s1_2027_elec1, "Elective 1"),
+        formatLi(customSlots.s1_2027_elec2, "Elective 2")
+      ].join("");
+
+      document.getElementById("rec-list-s2-2027").innerHTML = [
+        formatLi("ENV2726", "Major Core"),
+        formatLi(customSlots.s2_2027_sci, "L2 Science"),
+        formatLi(customSlots.s2_2027_elec1, "Elective 3"),
+        formatLi(customSlots.s2_2027_elec2, "Elective 4")
+      ].join("");
+
+      document.getElementById("rec-list-s1-2028").innerHTML = [
+        formatLi(customSlots.s1_2028_elec1, `L${UNITS[customSlots.s1_2028_elec1].level} Elective 5`),
+        formatLi(customSlots.s1_2028_elec2, `L${UNITS[customSlots.s1_2028_elec2].level} Elective 6`)
+      ].join("");
+    }
+
+    // Render Tab 2: Course Map Grid
+    function renderCourseMap() {
+      const container = document.getElementById("course-map-container");
+      const p = state.plan;
+
+      const rows = [
+        {
+          semTitle: "Semester 2, 2026 (Current Semester — Circled on Map)",
+          semSub: "July–November 2026 • 24 CP • 4 Level 1 Science Units Completed",
+          badge: "In Progress",
+          badgeClass: "bg-pink-100 text-pink-800 border-pink-300",
+          cells: [
+            { code: "ENV1800", type: "MAJOR_CORE", slotKey: null },
+            { code: "CHM1051", type: "PART_A_SEQ", slotKey: null },
+            { code: "SCI1020", type: "PART_A_CORE", slotKey: null },
+            { code: "SCI1000", type: "PART_A_CORE", slotKey: null }
+          ]
+        },
+        {
+          semTitle: "Semester 1, 2027 (Upcoming — Select in 2027 WES Re-Enrolment)",
+          semSub: "March–June 2027 • 24 CP • Finishes Level 1 Science Minimum (6/6 Units)",
+          badge: "2027 Re-Enrolment",
+          badgeClass: "bg-emerald-100 text-emerald-800 border-emerald-300",
+          cells: [
+            { code: "BIO1011", type: "MAJOR_CORE", slotKey: null },
+            { code: "CHM1052", type: "PART_A_SEQ", slotKey: null },
+            { code: p.s1_2027_elec1, type: "ELECTIVE", slotKey: "s1_2027_elec1" },
+            { code: p.s1_2027_elec2, type: "ELECTIVE", slotKey: "s1_2027_elec2" }
+          ]
+        },
+        {
+          semTitle: "Semester 2, 2027 (Upcoming — Select in 2027 WES Re-Enrolment)",
+          semSub: "July–November 2027 • 24 CP • Reaches 10/10 Level 1 Unit Ceiling",
+          badge: "2027 Re-Enrolment",
+          badgeClass: "bg-emerald-100 text-emerald-800 border-emerald-300",
+          cells: [
+            { code: "ENV2726", type: "MAJOR_CORE", slotKey: null },
+            { code: p.s2_2027_sci, type: "SCI_L23", slotKey: "s2_2027_sci" },
+            { code: p.s2_2027_elec1, type: "ELECTIVE", slotKey: "s2_2027_elec1" },
+            { code: p.s2_2027_elec2, type: "ELECTIVE", slotKey: "s2_2027_elec2" }
+          ]
+        },
+        {
+          semTitle: "Semester 1, 2028 (Year 2 — Level 2/3 Electives Required)",
+          semSub: "March–June 2028 • 24 CP • Electives Must Be Level 2 or 3 (2xxx/3xxx)",
+          badge: "Year 2 Plan",
+          badgeClass: "bg-slate-100 text-slate-700 border-slate-300",
+          cells: [
+            { code: "BIO2810", type: "MAJOR_CORE", slotKey: null },
+            { code: "BTH2820", type: "MAJOR_CORE", slotKey: null },
+            { code: p.s1_2028_elec1, type: "ELECTIVE", slotKey: "s1_2028_elec1" },
+            { code: p.s1_2028_elec2, type: "ELECTIVE", slotKey: "s1_2028_elec2" }
+          ]
+        },
+        {
+          semTitle: "Semester 2, 2028 (Year 3 — Upper-Level Science Focus)",
+          semSub: "July–November 2028 • 24 CP • 4 Science Units at Level 2/3",
+          badge: "Year 3 Plan",
+          badgeClass: "bg-slate-100 text-slate-700 border-slate-300",
+          cells: [
+            { code: "BIO3820", type: "MAJOR_CORE", slotKey: null },
+            { code: p.s2_2028_sci3, type: "SCI_L3", slotKey: "s2_2028_sci3" },
+            { code: p.s2_2028_sci2a, type: "SCI_L23", slotKey: "s2_2028_sci2a" },
+            { code: p.s2_2028_sci2b, type: "SCI_L23", slotKey: "s2_2028_sci2b" }
+          ]
+        },
+        {
+          semTitle: "Summer Semester 2028 & Semester 1, 2029 (Final Graduating Semesters)",
+          semSub: "Nov 2028–June 2029 • 24 CP Total • Capstone Fieldwork, Internship & Research",
+          badge: "Final Year",
+          badgeClass: "bg-slate-100 text-slate-700 border-slate-300",
+          cells: [
+            { code: "SCI3800", type: "REC_ELEC", slotKey: null, customTag: "Summer 2028 (Recommended)" },
+            { code: "BIO3800", type: "MAJOR_CORE", slotKey: null, customTag: "Sem 1, 2029 Core" },
+            { code: "BIO3810", type: "MAJOR_CORE", slotKey: null, customTag: "Sem 1, 2029 Core" },
+            { code: "SCI3990", type: "REC_ELEC", slotKey: null, customTag: "Sem 1, 2029 Capstone" }
+          ]
+        }
+      ];
+
+      container.innerHTML = rows.map(row => {
+        const cardsHtml = row.cells.map(cell => {
+          const u = UNITS[cell.code];
+          if (!u) return "";
+
+          let cardStyle = "bg-white border-slate-200";
+          let topBadge = "Core Unit";
+          let topBadgeStyle = "bg-slate-100 text-slate-700";
+
+          if (cell.type === "MAJOR_CORE") {
+            cardStyle = "bg-emerald-50/70 border-emerald-300";
+            topBadge = cell.customTag || "Major Core (Locked)";
+            topBadgeStyle = "bg-emerald-700 text-white";
+          } else if (cell.type === "PART_A_SEQ" || cell.type === "PART_A_CORE") {
+            cardStyle = "bg-teal-50/60 border-teal-200";
+            topBadge = "Part A Science Core";
+            topBadgeStyle = "bg-teal-700 text-white";
+          } else if (cell.type === "SCI_L23" || cell.type === "SCI_L3") {
+            cardStyle = "bg-sky-50/70 border-sky-300 hover:border-sky-500";
+            topBadge = cell.type === "SCI_L3" ? "Science L3 Slot ✎" : "Science L2/3 Slot ✎";
+            topBadgeStyle = "bg-sky-700 text-white";
+          } else if (cell.type === "ELECTIVE") {
+            cardStyle = "bg-amber-50/70 border-amber-300 hover:border-amber-500";
+            topBadge = "Elective Slot ✎";
+            topBadgeStyle = "bg-amber-600 text-white";
+          } else if (cell.type === "REC_ELEC") {
+            cardStyle = "bg-indigo-50/60 border-indigo-200";
+            topBadge = cell.customTag || "Recommended Elective";
+            topBadgeStyle = "bg-indigo-700 text-white";
+          }
+
+          const prereqRes = u.prereqCheck(state.plan);
+          const hasWarning = !prereqRes.ok || (cell.slotKey && cell.slotKey.startsWith("s1_2028") && u.level === 1 && evaluatePlan(state.plan).l1Count > 10);
+
+          return `
+            <div class="rounded-xl border p-3.5 flex flex-col justify-between transition-all ${cardStyle} ${hasWarning ? 'ring-2 ring-rose-500 bg-rose-50/80' : ''}">
+              <div>
+                <div class="flex items-center justify-between gap-1.5">
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded ${topBadgeStyle}">${topBadge}</span>
+                  <span class="text-[11px] font-semibold text-slate-500">Level ${u.level} • ${u.cp} CP</span>
+                </div>
+                <div class="mt-2">
+                  <a href="${u.url}" target="_blank" rel="noopener noreferrer" class="text-sm font-extrabold text-slate-900 hover:text-emerald-700 underline decoration-slate-300">
+                    ${u.code} — ${u.name} ↗
+                  </a>
+                </div>
+                <p class="text-[11px] text-slate-600 mt-1 line-clamp-2">${u.assessment}</p>
+                ${hasWarning ? `<p class="text-[11px] font-bold text-rose-700 mt-1.5">⚠️ ${!prereqRes.ok ? prereqRes.reason : 'Exceeds 10-unit Level 1 cap!'}</p>` : ''}
+              </div>
+
+              <div class="mt-3 pt-2 border-t border-slate-200/70 flex items-center justify-between gap-2">
+                <span class="text-[11px] font-medium ${u.hasExam ? 'text-slate-600' : 'text-emerald-700 font-semibold'}">
+                  ${u.hasExam ? '📝 Has Final Exam' : '✨ 100% Coursework'}
+                </span>
+                ${cell.slotKey ? `
+                  <button type="button" data-open-slot="${cell.slotKey}" class="open-slot-btn px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-emerald-700 text-white text-[11px] font-bold transition">
+                    Swap Unit
+                  </button>
+                ` : `<span class="text-[11px] text-slate-400 font-medium">Fixed on Map</span>`}
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        return `
+          <div class="rounded-xl border border-slate-200 bg-slate-50/60 p-4 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900">${row.semTitle}</h3>
+                <p class="text-xs text-slate-500">${row.semSub}</p>
+              </div>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full border self-start sm:self-center ${row.badgeClass}">
+                ${row.badge}
+              </span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              ${cardsHtml}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // Open Slot Picker Modal
+    function openSlotModal(slotKey) {
+      state.activeSlotEditing = slotKey;
+      const def = SLOT_DEFS[slotKey];
+      if (!def) return;
+
+      document.getElementById("modal-slot-title").textContent = def.label;
+      document.getElementById("modal-slot-rule-hint").textContent = def.hint;
+      document.getElementById("modal-search-input").value = "";
+      renderModalOptions("");
+      document.getElementById("slot-modal").classList.remove("hidden");
+    }
+
+    function renderModalOptions(query) {
+      const slotKey = state.activeSlotEditing;
+      const def = SLOT_DEFS[slotKey];
+      if (!def) return;
+
+      const q = (query || "").trim().toLowerCase();
+      const currentCode = state.plan[slotKey];
+
+      // Filter candidate units offered in that semester
+      const candidates = Object.values(UNITS).filter(u => {
+        if (u.source === "CORE" && !["BTH2830"].includes(u.code)) return false;
+        if (!u.semesters.includes(def.sem) && u.code !== "NUT1024") return false;
+        if (def.requireScience && !u.isScience) return false;
+        if (!def.allowedLevels.includes(u.level) && u.code !== "NUT1024") return false;
+        if (q && !(`${u.code} ${u.name} ${u.verdict}`).toLowerCase().includes(q)) return false;
+        return true;
+      });
+
+      const listEl = document.getElementById("modal-options-list");
+      if (candidates.length === 0) {
+        listEl.innerHTML = `<p class="text-xs text-slate-500 py-4 text-center">No matching units found for this semester slot.</p>`;
+        return;
+      }
+
+      listEl.innerHTML = candidates.map(u => {
+        const isCurrent = u.code === currentCode;
+        const isBlocked = u.semesters.includes("BLOCKED");
+        const prereq = u.prereqCheck(state.plan);
+        const l1Warning = slotKey.startsWith("s1_2028") && u.level === 1;
+
+        return `
+          <div class="rounded-xl border p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${isCurrent ? 'border-emerald-600 bg-emerald-50/60' : isBlocked ? 'border-rose-200 bg-rose-50/40 opacity-80' : 'border-slate-200 bg-white hover:border-slate-300'}">
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-1.5">
+                <span class="text-xs font-extrabold text-slate-900">${u.code} — ${u.name}</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700">Level ${u.level} • ${u.faculty}</span>
+                ${u.source === "SHORTLIST" ? `<span class="text-[11px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">On Original Shortlist</span>` : `<span class="text-[11px] font-bold px-2 py-0.5 rounded bg-teal-100 text-teal-800">Advisor Addition</span>`}
+                ${!u.hasExam ? `<span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">100% Coursework (No Exam)</span>` : ''}
+              </div>
+              <p class="text-xs text-slate-600">${u.verdict}</p>
+              <p class="text-[11px] text-slate-500"><strong>Assessment:</strong> ${u.assessment} • <strong>Rules:</strong> ${u.prereqText}</p>
+              ${!prereq.ok ? `<p class="text-[11px] font-bold text-rose-600">⚠️ Prerequisite Alert: ${prereq.reason}</p>` : ''}
+              ${l1Warning ? `<p class="text-[11px] font-bold text-amber-700">⚠️ Level 1 Cap Alert: Selecting a Level 1 (1xxx) unit in 2028 will exceed the 10-unit Level 1 cap if you took 4 Level 1 electives in 2027.</p>` : ''}
+            </div>
+            <div class="shrink-0 flex items-center gap-2">
+              <a href="${u.url}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 text-xs font-semibold">
+                Handbook ↗
+              </a>
+              ${isBlocked ? `
+                <button type="button" disabled class="px-3 py-1.5 rounded-lg bg-rose-200 text-rose-800 text-xs font-bold cursor-not-allowed">
+                  Restricted (M2016)
+                </button>
+              ` : `
+                <button type="button" data-select-unit="${u.code}" class="select-slot-unit-btn px-3.5 py-1.5 rounded-lg ${isCurrent ? 'bg-emerald-700 text-white' : 'bg-slate-900 hover:bg-emerald-600 text-white'} text-xs font-bold transition">
+                  ${isCurrent ? 'Selected' : 'Select Unit'}
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // Render Tab 3: Unit Explorer Cards (32 Units)
+    function renderUnitExplorer() {
+      const searchQ = (document.getElementById("unit-search-input").value || "").trim().toLowerCase();
+      const sourceF = document.getElementById("filter-source").value;
+      const semF = document.getElementById("filter-sem").value;
+      const discF = document.getElementById("filter-disc").value;
+      const levelF = document.getElementById("filter-level").value;
+      const examF = document.getElementById("filter-exam").value;
+
+      const allUnits = Object.values(UNITS);
+      const filtered = allUnits.filter(u => {
+        if (sourceF !== "ALL" && u.source !== sourceF) return false;
+        if (semF !== "ALL" && !u.semesters.includes(semF)) return false;
+        if (discF !== "ALL" && u.disc !== discF) return false;
+        if (levelF !== "ALL" && String(u.level) !== levelF) return false;
+        if (examF === "NO_EXAM" && u.hasExam) return false;
+        if (examF === "HAS_EXAM" && !u.hasExam) return false;
+        if (searchQ && !(`${u.code} ${u.name} ${u.faculty} ${u.verdict} ${u.assessment}`).toLowerCase().includes(searchQ)) return false;
+        return true;
+      });
+
+      document.getElementById("explorer-count-label").textContent = `Showing ${filtered.length} of ${allUnits.length} verified Monash Malaysia units`;
+
+      const grid = document.getElementById("unit-cards-grid");
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full py-8 text-center text-sm text-slate-500">No units match your current filters. Click "Reset All Filters" to view all 32 units.</div>`;
+        return;
+      }
+
+      const planCodes = getAllPlanUnitCodes(state.plan);
+
+      grid.innerHTML = filtered.map(u => {
+        const inPlan = planCodes.includes(u.code);
+        let sourceBadge = `<span class="text-[11px] font-bold px-2 py-0.5 rounded bg-teal-100 text-teal-800">Advisor Addition</span>`;
+        if (u.source === "SHORTLIST") {
+          sourceBadge = `<span class="text-[11px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900">Original Shortlist</span>`;
+        } else if (u.source === "CORE") {
+          sourceBadge = `<span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-900">Major / Degree Core</span>`;
+        }
+
+        const semText = u.semesters.includes("BLOCKED")
+          ? "Blocked (M2016 Only)"
+          : u.semesters.map(s => s === "S1" ? "Semester 1" : s === "S2" ? "Semester 2" : "Summer").join(" & ");
+
+        return `
+          <div class="rounded-2xl border p-4 flex flex-col justify-between bg-white shadow-xs transition hover:shadow-md ${inPlan ? 'border-emerald-500 ring-1 ring-emerald-500/40' : 'border-slate-200'}">
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-1.5">
+                ${sourceBadge}
+                <span class="text-[11px] font-semibold text-slate-500">Level ${u.level} • ${u.faculty}</span>
+              </div>
+              <div>
+                <a href="${u.url}" target="_blank" rel="noopener noreferrer" class="text-base font-extrabold text-slate-900 hover:text-emerald-700 underline decoration-slate-300">
+                  ${u.code} — ${u.name} ↗
+                </a>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+                <span class="px-2 py-0.5 rounded font-semibold ${u.semesters.includes('BLOCKED') ? 'bg-rose-100 text-rose-800' : 'bg-slate-100 text-slate-700'}">
+                  📅 ${semText}
+                </span>
+                <span class="px-2 py-0.5 rounded font-semibold ${u.hasExam ? 'bg-slate-100 text-slate-700' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'}">
+                  ${u.hasExam ? '📝 Has Final Exam' : '✨ 100% Coursework'}
+                </span>
+              </div>
+              <p class="text-xs text-slate-700 leading-relaxed">${u.verdict}</p>
+              <div class="text-[11px] text-slate-500 bg-slate-50 rounded-lg p-2.5 border border-slate-100 space-y-1">
+                <div><strong>Assessment:</strong> ${u.assessment}</div>
+                <div><strong>Rules/Prereqs:</strong> ${u.prereqText}</div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+              <a href="${u.url}" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-700 hover:underline">
+                Official Handbook ↗
+              </a>
+              ${inPlan ? `
+                <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-900 text-xs font-bold">
+                  ✔ In Your Course Map
+                </span>
+              ` : u.semesters.includes("BLOCKED") ? `
+                <span class="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800 text-xs font-bold">
+                  Restricted (M2016)
+                </span>
+              ` : `
+                <button type="button" data-quick-add="${u.code}" class="quick-add-unit-btn px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-emerald-700 text-white text-xs font-bold transition">
+                  + Add to 2027/2028 Map
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // Quick-add a unit from Explorer into an appropriate slot on the Course Map
+    function quickAddUnitToPlan(code) {
+      const u = UNITS[code];
+      if (!u || u.semesters.includes("BLOCKED")) return;
+
+      let targetSlot = null;
+      if (u.level === 1 && u.semesters.includes("S1")) {
+        targetSlot = state.plan.s1_2027_elec1 === code ? "s1_2027_elec2" : "s1_2027_elec1";
+      } else if (u.level === 1 && u.semesters.includes("S2")) {
+        targetSlot = state.plan.s2_2027_elec1 === code ? "s2_2027_elec2" : "s2_2027_elec1";
+      } else if (u.level >= 2 && u.isScience && u.semesters.includes("S2")) {
+        targetSlot = "s2_2027_sci";
+      } else if (u.level >= 2 && u.semesters.includes("S1")) {
+        targetSlot = state.plan.s1_2028_elec1 === code ? "s1_2028_elec2" : "s1_2028_elec1";
+      }
+
+      if (targetSlot) {
+        state.plan[targetSlot] = code;
+        updateStatusBarAndBanner();
+        renderCourseMap();
+        renderUnitExplorer();
+        showToast(`Added ${u.code} — ${u.name} to ${SLOT_DEFS[targetSlot].label}`);
+      } else {
+        showToast(`${u.code} is a Summer or fixed unit — view details in the Course Map tab.`);
+      }
+    }
+
+    // Render Tab 4: MPU Checklist
+    function renderMpuChecklist() {
+      const mpuList = [
+        { code: "MPU3143", name: "Communicative Malay 2", cat: "U1 (Compulsory for International Students)", desc: "Introduces practical spoken and written Bahasa Melayu for daily communication in Malaysia." },
+        { code: "MPU3172", name: "Malaysian Citra", cat: "U1 (Sem 2, 2026+ Cohort)", desc: "Explores Malaysian history, cultural diversity, society, and national identity." },
+        { code: "MPU3312", name: "Integrity and Anti-Corruption Unit", cat: "U1 (Compulsory)", desc: "Examines ethics, governance, and anti-corruption frameworks in Malaysia and globally." },
+        { code: "MPU3222", name: "Professional English", cat: "U2 (Sem 2, 2026+ Cohort)", desc: "Develops professional workplace communication and presentation skills." },
+        { code: "MPU3322", name: "Development and Current Issues in Malaysia", cat: "U3 (Sem 2, 2026+ Cohort)", desc: "Analyses socio-economic development and contemporary policy issues in Malaysia." },
+        { code: "MPU3412", name: "Sustainability in Practice", cat: "U4 (Community/Sustainability Project)", desc: "Hands-on community engagement and sustainability project unit." }
+      ];
+
+      const container = document.getElementById("mpu-checklist-container");
+      container.innerHTML = mpuList.map(item => {
+        const checked = !!state.mpuChecked[item.code];
+        return `
+          <label class="flex items-start gap-3 p-3.5 rounded-xl border cursor-pointer transition ${checked ? 'bg-emerald-50/70 border-emerald-300' : 'bg-slate-50 border-slate-200 hover:border-slate-300'}">
+            <input type="checkbox" data-mpu="${item.code}" ${checked ? 'checked' : ''} class="mpu-checkbox mt-1 h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500" />
+            <div class="text-xs">
+              <div class="font-bold text-slate-900">${item.code} — ${item.name} <span class="ml-1.5 px-2 py-0.5 rounded bg-slate-200 text-slate-700 font-semibold text-[11px]">${item.cat}</span></div>
+              <p class="text-slate-600 mt-0.5">${item.desc}</p>
+            </div>
+          </label>
+        `;
+      }).join("");
+    }
+
+    // Build Export Text Summary
+    function generateExportText() {
+      const p = state.plan;
+      const stats = evaluatePlan(p);
+      const fmt = (c) => `${c} — ${UNITS[c] ? UNITS[c].name : ''}`;
+
+      return [
+        "======================================================================",
+        "MONASH UNIVERSITY MALAYSIA — S2000 BACHELOR OF SCIENCE STUDY PLAN",
+        "Major: TRENVBIO05 / TRENVBIO06 — Tropical environmental biology",
+        `Selected Track: ${stats.trackLabel}`,
+        `Compliance: ${stats.totalCP}/144 CP | Level 1 Units: ${stats.l1Count}/10 Max | L2/3 Science: ${stats.l23SciCount}/10 Min`,
+        "======================================================================",
+        "",
+        "SEMESTER 2, 2026 (Current Semester — 24 CP):",
+        `  1. ${fmt("ENV1800")} [Major Core]`,
+        `  2. ${fmt("CHM1051")} [Science Sequence 2]`,
+        `  3. ${fmt("SCI1020")} [Part A Stats Core]`,
+        `  4. ${fmt("SCI1000")} [Part A Comm Core]`,
+        "",
+        "SEMESTER 1, 2027 (2027 WES Re-Enrolment — 24 CP):",
+        `  1. ${fmt("BIO1011")} [Major Core]`,
+        `  2. ${fmt("CHM1052")} [Science Sequence 2]`,
+        `  3. ${fmt(p.s1_2027_elec1)} [Elective 1]`,
+        `  4. ${fmt(p.s1_2027_elec2)} [Elective 2]`,
+        "",
+        "SEMESTER 2, 2027 (2027 WES Re-Enrolment — 24 CP):",
+        `  1. ${fmt("ENV2726")} [Major Core]`,
+        `  2. ${fmt(p.s2_2027_sci)} [Science Unit – Level 2 or 3]`,
+        `  3. ${fmt(p.s2_2027_elec1)} [Elective 3]`,
+        `  4. ${fmt(p.s2_2027_elec2)} [Elective 4]`,
+        "",
+        "SEMESTER 1, 2028 (Year 2 — 24 CP, Cap-Safe Level 2/3 Electives):",
+        `  1. ${fmt("BIO2810")} [Major Core]`,
+        `  2. ${fmt("BTH2820")} [Major Core]`,
+        `  3. ${fmt(p.s1_2028_elec1)} [Elective 5 — Level ${UNITS[p.s1_2028_elec1].level}]`,
+        `  4. ${fmt(p.s1_2028_elec2)} [Elective 6 — Level ${UNITS[p.s1_2028_elec2].level}]`,
+        "",
+        "SEMESTER 2, 2028 (Year 3 — 24 CP):",
+        `  1. ${fmt("BIO3820")} [Major Core — Manual WES Enrolment]`,
+        `  2. ${fmt(p.s2_2028_sci3)} [Science Unit – Level 3]`,
+        `  3. ${fmt(p.s2_2028_sci2a)} [Science Unit – Level 2 or 3]`,
+        `  4. ${fmt(p.s2_2028_sci2b)} [Science Unit – Level 2 or 3]`,
+        "",
+        "SUMMER 2028 & SEMESTER 1, 2029 (Final Semesters — 24 CP):",
+        `  • Summer 2028: ${fmt("SCI3800")} [Recommended Elective]`,
+        `  • Sem 1, 2029: ${fmt("BIO3800")} [Major Core]`,
+        `  • Sem 1, 2029: ${fmt("BIO3810")} [Major Core]`,
+        `  • Sem 1, 2029: ${fmt("SCI3990")} [Recommended Research Project]`
+      ].join("\n");
+    }
+
+    // Switch Tabs
+    function switchTab(tabId) {
+      state.activeTab = tabId;
+      ["advisor", "planner", "explorer", "visa"].forEach(t => {
+        const view = document.getElementById(`view-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (t === tabId) {
+          view.classList.remove("hidden");
+          btn.className = "nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-emerald-500 text-slate-950 shadow-sm";
+        } else {
+          view.classList.add("hidden");
+          btn.className = "nav-tab-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-slate-800/80 text-slate-200 hover:bg-slate-700";
+        }
+      });
+    }
+
+    // =========================================================================
+    // 6. EVENT LISTENERS & INITIALIZATION
+    // =========================================================================
+    window.addEventListener("DOMContentLoaded", () => {
+      // Initial renders
+      computeQuizRecommendation();
+      updateStatusBarAndBanner();
+      renderCourseMap();
+      renderUnitExplorer();
+      renderMpuChecklist();
+
+      // Tab navigation buttons
+      document.querySelectorAll(".nav-tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          switchTab(btn.getAttribute("data-tab"));
+        });
+      });
+
+      document.getElementById("btn-jump-planner").addEventListener("click", () => {
+        switchTab("planner");
+      });
+
+      // Quiz option buttons
+      document.querySelectorAll(".quiz-opt-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const q = btn.getAttribute("data-q");
+          const val = btn.getAttribute("data-val");
+          state.quiz[q] = val;
+
+          document.querySelectorAll(`.quiz-opt-btn[data-q="${q}"]`).forEach(b => {
+            if (b.getAttribute("data-val") === val) {
+              b.className = "quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm";
+            } else {
+              b.className = "quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300";
+            }
+          });
+
+          computeQuizRecommendation();
+        });
+      });
+
+      // Reset Quiz
+      document.getElementById("btn-reset-quiz").addEventListener("click", () => {
+        state.quiz = { q1: "light", q2: "writing", q3: "just_browsing", q4: "global_policy", q5: "STA2216" };
+        document.querySelectorAll(".quiz-opt-btn").forEach(b => {
+          const q = b.getAttribute("data-q");
+          const v = b.getAttribute("data-val");
+          if (state.quiz[q] === v) {
+            b.className = "quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm";
+          } else {
+            b.className = "quiz-opt-btn text-left p-2.5 rounded-lg border text-xs transition-all bg-white text-slate-700 border-slate-200 hover:border-slate-300";
+          }
+        });
+        computeQuizRecommendation();
+        showToast("Quiz answers reset to default.");
+      });
+
+      // Apply recommended pathway to Course Map
+      document.getElementById("btn-apply-recommended").addEventListener("click", () => {
+        if (state._computedCustomSlots) {
+          state.plan = { ...state._computedCustomSlots };
+        } else {
+          state.plan = { ...PRESET_PATHWAYS[state.recommendedPresetKey].slots };
+        }
+        document.getElementById("planner-preset-select").value = state.recommendedPresetKey;
+        updateStatusBarAndBanner();
+        renderCourseMap();
+        renderUnitExplorer();
+        switchTab("planner");
+        showToast("Applied personalized pathway to your 2026–2029 Course Map!");
+      });
+
+      // Preset pathway buttons in Tab 1
+      document.querySelectorAll(".preset-pathway-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const key = btn.getAttribute("data-preset");
+          if (!PRESET_PATHWAYS[key]) return;
+          state.recommendedPresetKey = key;
+          state._computedCustomSlots = { ...PRESET_PATHWAYS[key].slots };
+          state.plan = { ...PRESET_PATHWAYS[key].slots };
+          document.getElementById("planner-preset-select").value = key;
+
+          const presetMeta = PRESET_PATHWAYS[key];
+          document.getElementById("rec-pathway-title").textContent = presetMeta.title;
+          document.getElementById("rec-match-badge").textContent = presetMeta.badge;
+          document.getElementById("rec-pathway-summary").textContent = presetMeta.summary;
+
+          updateStatusBarAndBanner();
+          renderCourseMap();
+          renderUnitExplorer();
+          switchTab("planner");
+          showToast(`Loaded ${presetMeta.title}`);
+        });
+      });
+
+      // Planner preset select dropdown in Tab 2
+      document.getElementById("planner-preset-select").addEventListener("change", (e) => {
+        const key = e.target.value;
+        if (!PRESET_PATHWAYS[key]) return;
+        state.plan = { ...PRESET_PATHWAYS[key].slots };
+        updateStatusBarAndBanner();
+        renderCourseMap();
+        renderUnitExplorer();
+        showToast(`Loaded ${PRESET_PATHWAYS[key].title}`);
+      });
+
+      // Delegate clicks for dynamic Course Map & Explorer buttons
+      document.body.addEventListener("click", (e) => {
+        const openSlotBtn = e.target.closest(".open-slot-btn");
+        if (openSlotBtn) {
+          openSlotModal(openSlotBtn.getAttribute("data-open-slot"));
+          return;
+        }
+
+        const selectUnitBtn = e.target.closest(".select-slot-unit-btn");
+        if (selectUnitBtn && state.activeSlotEditing) {
+          const chosenCode = selectUnitBtn.getAttribute("data-select-unit");
+          state.plan[state.activeSlotEditing] = chosenCode;
+          document.getElementById("slot-modal").classList.add("hidden");
+          updateStatusBarAndBanner();
+          renderCourseMap();
+          renderUnitExplorer();
+          showToast(`Selected ${chosenCode} — ${UNITS[chosenCode].name}`);
+          return;
+        }
+
+        const quickAddBtn = e.target.closest(".quick-add-unit-btn");
+        if (quickAddBtn) {
+          quickAddUnitToPlan(quickAddBtn.getAttribute("data-quick-add"));
+          return;
+        }
+      });
+
+      // Slot Modal search & close
+      document.getElementById("modal-search-input").addEventListener("input", (e) => {
+        renderModalOptions(e.target.value);
+      });
+      document.getElementById("btn-close-slot-modal").addEventListener("click", () => {
+        document.getElementById("slot-modal").classList.add("hidden");
+      });
+
+      // Explorer filters
+      ["unit-search-input", "filter-source", "filter-sem", "filter-disc", "filter-level", "filter-exam"].forEach(id => {
+        const el = document.getElementById(id);
+        el.addEventListener("input", renderUnitExplorer);
+        el.addEventListener("change", renderUnitExplorer);
+      });
+
+      document.getElementById("btn-reset-filters").addEventListener("click", () => {
+        document.getElementById("unit-search-input").value = "";
+        document.getElementById("filter-source").value = "ALL";
+        document.getElementById("filter-sem").value = "ALL";
+        document.getElementById("filter-disc").value = "ALL";
+        document.getElementById("filter-level").value = "ALL";
+        document.getElementById("filter-exam").value = "ALL";
+        renderUnitExplorer();
+      });
+
+      // MPU checkbox delegation
+      document.getElementById("mpu-checklist-container").addEventListener("change", (e) => {
+        const cb = e.target.closest(".mpu-checkbox");
+        if (!cb) return;
+        const code = cb.getAttribute("data-mpu");
+        state.mpuChecked[code] = cb.checked;
+        renderMpuChecklist();
+      });
+
+      // Export Modal open & copy
+      const openExportModal = () => {
+        document.getElementById("export-textarea").value = generateExportText();
+        document.getElementById("export-modal").classList.remove("hidden");
+      };
+      document.getElementById("btn-export-plan").addEventListener("click", openExportModal);
+      document.getElementById("btn-planner-copy").addEventListener("click", openExportModal);
+      document.getElementById("btn-close-export-modal").addEventListener("click", () => {
+        document.getElementById("export-modal").classList.add("hidden");
+      });
+
+      document.getElementById("btn-copy-clipboard").addEventListener("click", () => {
+        const ta = document.getElementById("export-textarea");
+        ta.select();
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(ta.value).then(() => {
+              showToast("Copied full study plan to clipboard!");
+            }).catch(() => {
+              document.execCommand("copy");
+              showToast("Copied full study plan to clipboard!");
+            });
+          } else {
+            document.execCommand("copy");
+            showToast("Copied full study plan to clipboard!");
+          }
+        } catch (err) {
+          document.execCommand("copy");
+          showToast("Copied full study plan to clipboard!");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
